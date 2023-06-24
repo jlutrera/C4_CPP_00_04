@@ -5,6 +5,8 @@
 #	include <iostream>
 #	include <iomanip>
 #	include <limits>
+#	include <sstream>
+#	include <vector>
 
 class Contact{
 	private:

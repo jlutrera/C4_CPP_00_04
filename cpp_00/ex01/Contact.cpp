@@ -47,21 +47,25 @@ void	Contact::setIndex(int i) {
 
 void	Contact::view(int index) const {
 	if (this->_firstName.empty() || this->_lastName.empty() || this->_nickName.empty())
-		return ;
-	std::cout << "|" << std::setw(10) << index << std::flush;
-	std::cout << "|" << std::setw(10) << this->_printLen(this->_firstName) << std::flush;
-	std::cout << "|" << std::setw(10) << this->_printLen(this->_lastName) << std::flush;
-	std::cout << "|" << std::setw(10) << this->_printLen(this->_nickName) << std::flush;
-	std::cout << "|" << std::endl;
+		std::cout << "---->> NO CONTACT <<----" << std::endl;
+	else{
+		std::cout << "|" << std::setw(10) << index << std::flush;
+		std::cout << "|" << std::setw(10) << this->_printLen(this->_firstName) << std::flush;
+		std::cout << "|" << std::setw(10) << this->_printLen(this->_lastName) << std::flush;
+		std::cout << "|" << std::setw(10) << this->_printLen(this->_nickName) << std::flush;
+		std::cout << "|" << std::endl << std::flush;
+	}
 }
 
 void	Contact::display(int index) const {
 	if (this->_firstName.empty() || this->_lastName.empty() || this->_nickName.empty())
-		return ;
-	std::cout << std::endl;
-	std::cout << "---->> CONTACT #" << index << " <<----" << std::endl;
-	std::cout << "First Name:\t" << this->_firstName << std::endl;
-	std::cout << "Last Name:\t" << this->_lastName << std::endl;
-	std::cout << "Nickname:\t" << this->_nickName << std::endl;
-	std::cout << std::endl;
+		std::cout << "---->> NO CONTACT <<----" << std::endl;
+	else{
+		std::cout << std::endl;
+		std::cout << "---->> CONTACT #" << index << " <<----" << std::endl;
+		std::cout << "First Name:\t" << this->_firstName << std::endl;
+		std::cout << "Last Name:\t" << this->_lastName << std::endl;
+		std::cout << "Nickname:\t" << this->_nickName << std::endl;
+		std::cout << std::endl << std::flush;
+	}
 }

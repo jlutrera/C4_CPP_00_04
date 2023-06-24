@@ -9,9 +9,6 @@ PhoneBook::~PhoneBook()
 }
 
 void	PhoneBook::welcome(void) const {
-	std::cout << std::endl;
-	std::cout << "📞 Welcome to Your PhoneBook" << std::endl;
-	std::cout << std::endl;
 	std::cout << "--------------USAGE---------------" << std::endl;
 	std::cout << "ADD\t: To add a contact." << std::endl;
 	std::cout << "SEARCH\t: To search for a contact." << std::endl;
@@ -32,7 +29,7 @@ void	PhoneBook::printContacts(void) const {
 	for (size_t i = 0; i < 8; i++) {
 		this->_contacts[i].view(i);
 	}
-	std::cout << std::endl;
+	std::cout << std::endl << std::flush;
 }
 
 int	PhoneBook::_readInput() const {
@@ -40,9 +37,11 @@ int	PhoneBook::_readInput() const {
 	bool	valid = false;
 
 	do{
-		std::cout << "Please enter the contact index: " << std::flush;
+		std::cout << "Please enter the contact index: ";
 		std::cin >> input;
-		if (std::cin.good() && (input >= 0 && input <= 8))
+		if (std::cin.eof())
+			break;
+		if (input >= 0 && input <= 8)
 			valid = true;
 		else {
 			std::cin.clear();
