@@ -7,6 +7,13 @@
 #	include <limits>
 #	include <sstream>
 #	include <vector>
+#   include <string>
+
+const std::string RESET = "\033[0m";
+const std::string RED = "\033[31m";
+const std::string GREEN = "\033[32m";
+const std::string YELLOW = "\033[33m";
+const std::string BLUE = "\033[34m";
 
 class Contact{
 	private:
@@ -22,10 +29,9 @@ class Contact{
 	public:
 		Contact();
 		~Contact();
-		void    init(void);
+		void    init(int i);
 		void    view(int index) const;
 		void    display(int index) const;
-		void    setIndex(int i);
 };
 
 #endif
