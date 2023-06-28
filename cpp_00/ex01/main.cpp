@@ -1,43 +1,45 @@
 
 #include "PhoneBook.hpp"
 
-static void	welcome(void)
+static void	welcome( void )
 {
 	std::cout << "--------------USAGE---------------" << std::endl;
 	std::cout << "ADD\t: To add a contact." << std::endl;
 	std::cout << "SEARCH\t: To search for a contact." << std::endl;
-	std::cout << "EXIT\t: to quite the PhoneBook." << std::endl;
+	std::cout << "EXIT\t: To quite the PhoneBook." << std::endl;
 	std::cout << "----------------------------------" << std::endl;
 	std::cout << std::endl;
 }
 
-static int ft_one_order(std::string input)
+static int ft_one_order( std::string input )
 {
-	std::stringstream ss(input);
-    std::string token;
-    std::vector<std::string> strings;
+	std::stringstream	ss(input);
+    std::string 		token;
+    std::string			strings[2];
 
 	// Split the input line by space delimiter and store individual strings
-	while (ss >> token)
-	    strings.push_back(token);
-	return (strings.size() == 1);
+	int i = 0;
+	while (i < 2 && ss >> token)
+	    strings[i++] = token;
+	return (i  == 1);
 }
 
-int main(void)
+int main( void )
 {
-	PhoneBook book;
-	std::string input;
+	PhoneBook 	book;
+	std::string	input;
 
 	std::cout << std::endl;
 	std::cout << "📞 Welcome to your PhoneBook" << std::endl;
 	std::cout << std::endl;
 	
 	welcome();
-	while (1)
+	while ( 1 )
 	{
 		// Write the prompt and wait the intro
 		std::cout << "> ";
 		std::getline(std::cin, input);
+
 		// If ctrl + D is pressed, finish
 		if (std::cin.eof())
 		{
@@ -45,17 +47,15 @@ int main(void)
 			break;
 		}
 		
-		// If input is not empty...
 		if (!input.empty())
 		{
-			// If there is one order
-			if (ft_one_order(input))
+			if (ft_one_order( input ))
 			{
-	   			if (input.compare("EXIT") == 0)
+	   			if (input.compare( "EXIT" ) == 0)
 					break;
-    			else if (input.compare("ADD") == 0)
+    			else if (input.compare( "ADD" ) == 0)
 					book.addContact();
-				else if (input.compare("SEARCH") == 0)
+				else if (input.compare( "SEARCH" ) == 0)
 				{
 					book.printContacts();
 					book.search();

@@ -2,7 +2,6 @@
 # define ZOMBIE_HPP
 
 # include <iostream>
-# include <vector>
 
 class Zombie{
 	private:
@@ -10,10 +9,10 @@ class Zombie{
 	public:
 		Zombie();
 		~Zombie();
-		void announce(int i);
-		void setName(std::string name);
+		void announce();
+		void setName( std::string name );
 };
 
-Zombie* zombieHorde(int N, std::string name);
+Zombie* zombieHorde( int N, std::string name );
 
 #endif
