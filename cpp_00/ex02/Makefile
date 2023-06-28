@@ -13,7 +13,7 @@ RESET	=	\e[0m
 CURSIVE	=	\e[33;3m
 
 #Files
-SRC		=	Account.cpp test.cpp
+SRC		=	Account.cpp tests.cpp
 OBJ		= 	$(SRC:.cpp=.o)
 
 #Rules
