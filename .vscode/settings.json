@@ -77,6 +77,9 @@
 		"ratio": "cpp",
 		"sstream": "cpp",
 		"string": "cpp",
-		"string_view": "cpp"
+		"string_view": "cpp",
+		"deque": "cpp",
+		"fstream": "cpp",
+		"stack": "cpp"
 	}
 }

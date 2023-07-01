@@ -1,4 +1,4 @@
-NAME	= 	zombieHorde
+NAME	= 	mysed
 
 #Flags
 CC		= 	c++
@@ -6,7 +6,7 @@ CFLAGS	= 	-Wall -Wextra -Werror -std=c++98
 RM		= 	rm -rf
 
 #Files
-SRC		=	Zombie.cpp zombieHorde.cpp main.cpp
+SRC		=	main.cpp
 OBJ		= 	$(SRC:.cpp=.o)
 
 #Colors:
