@@ -6,7 +6,7 @@ CFLAGS	= 	-Wall -Wextra -Werror -std=c++98
 RM		= 	rm -rf
 
 #Files
-SRC		=	main.cpp
+SRC		=	sedfile.cpp main.cpp 
 OBJ		= 	$(SRC:.cpp=.o)
 
 #Colors:
