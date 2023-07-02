@@ -1,13 +1,5 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook()
-{
-}
-
-PhoneBook::~PhoneBook()
-{
-}
-
 void	PhoneBook::addContact( void )
 {
 	static int	i = 0;

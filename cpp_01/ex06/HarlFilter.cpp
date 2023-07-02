@@ -1,15 +1,5 @@
 #include "HarlFilter.hpp"
 
-HarlFilter::HarlFilter( void )
-{
-
-}
-
-HarlFilter::~HarlFilter( void )
-{
-
-}
-
 void HarlFilter::complainFilter(std::string level)
 {
     std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };

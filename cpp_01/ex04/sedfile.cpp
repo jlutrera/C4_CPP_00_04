@@ -8,11 +8,6 @@ SedFile::SedFile(char **argv)
 	this->_s2 = argv[3];
 }
 
-SedFile::~SedFile( void )
-{
-
-}
-
 int SedFile::openFiles()
 {
 	infile.open((this->_fin));

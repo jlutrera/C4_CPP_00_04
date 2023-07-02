@@ -5,8 +5,6 @@
 
 class HarlFilter{
 	public:
-		HarlFilter();
-		~HarlFilter();	
 		void complainFilter( std::string level );
 		
 	private:

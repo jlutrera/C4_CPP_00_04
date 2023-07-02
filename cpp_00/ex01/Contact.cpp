@@ -1,13 +1,5 @@
 #include "Contact.hpp"
 
-Contact::Contact()
-{
-}
-
-Contact::~Contact()
-{
-}
-
 std::string Contact::_printLen( std::string str ) const
 {
 	if (str.length() > 10)

@@ -8,7 +8,6 @@
 class SedFile{
 	public:
 		SedFile(char **argv);
-		~SedFile();
 		std::ifstream infile;
  		std::ofstream outfile;
 		int openFiles();
