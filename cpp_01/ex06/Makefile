@@ -1,12 +1,11 @@
-NAME	= 	zombieHorde
-
+NAME	= 	harlFilter
 #Flags
 CC		= 	c++
 CFLAGS	= 	-Wall -Wextra -Werror -std=c++98
 RM		= 	rm -rf
 
 #Files
-SRC		=	Zombie.cpp zombieHorde.cpp main.cpp
+SRC		=	HarlFilter.cpp main.cpp
 OBJ		= 	$(SRC:.cpp=.o)
 
 #Colors:

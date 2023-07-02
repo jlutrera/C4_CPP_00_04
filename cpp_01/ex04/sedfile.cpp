@@ -1,4 +1,4 @@
-#include "sedfile.hpp"
+#include "Sedfile.hpp"
 
 SedFile::SedFile(char **argv)
 {

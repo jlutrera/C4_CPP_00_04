@@ -1,4 +1,4 @@
-#include "sedfile.hpp"
+#include "SedFile.hpp"
 
 int main(int argc, char **argv)
 {
