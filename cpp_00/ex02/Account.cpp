@@ -17,13 +17,13 @@ void Account::_displayTimestamp()
     std::time_t result = std::time(NULL);
 
     std::cout << std::setfill('0') <<"[" << 1900 + std::localtime(&result)->tm_year
-                << std::setw(2) << 1 + std::localtime(&result)->tm_mon
-                <<  std::setw(2) << std::localtime(&result)->tm_mday
-                <<  "_"
-                <<  std::setw(2) << std::localtime(&result)->tm_hour
-                <<  std::setw(2) << std::localtime(&result)->tm_min
-                <<  std::setw(2) << std::localtime(&result)->tm_sec 
-                << "] " << std::flush;
+              << std::setw(2) << 1 + std::localtime(&result)->tm_mon
+              <<  std::setw(2) << std::localtime(&result)->tm_mday
+              <<  "_"
+              <<  std::setw(2) << std::localtime(&result)->tm_hour
+              <<  std::setw(2) << std::localtime(&result)->tm_min
+              <<  std::setw(2) << std::localtime(&result)->tm_sec 
+              << "] " << std::flush;
 }
 
 Account::Account(int initial_deposit) 

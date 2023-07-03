@@ -1,7 +1,7 @@
 
 #include "PhoneBook.hpp"
 
-static void	welcome( void )
+static void	usage( void )
 {
 	std::cout << "--------------USAGE---------------" << std::endl;
 	std::cout << "ADD\t: To add a contact." << std::endl;
@@ -33,7 +33,7 @@ int main( void )
 	std::cout << "📞 Welcome to your PhoneBook" << std::endl;
 	std::cout << std::endl;
 	
-	welcome();
+	usage();
 	while ( 1 )
 	{
 		// Write the prompt and wait the intro
@@ -63,7 +63,7 @@ int main( void )
 				else
 				{
 					std::cout << "Error: No order entered." << std::endl;
-					welcome();
+					usage();
 				}
 			}
 			// Error if more than one order exists
