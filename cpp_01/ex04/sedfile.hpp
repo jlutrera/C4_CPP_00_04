@@ -10,12 +10,12 @@ class SedFile{
 		SedFile();
 		~SedFile();
 		SedFile(char **argv);
-		std::ifstream infile;
- 		std::ofstream outfile;
 		int openFiles();
 		void closeFiles();
 		void replace();
 	private:
+		std::ifstream _infile;
+ 		std::ofstream _outfile;
 		std::string _fin;
 		std::string _fout;
 		std::string _s1;
