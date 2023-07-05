@@ -6,9 +6,10 @@
 class Fixed{
 	public:
 		Fixed();
+		Fixed& operator= ( const Fixed& ); 
 		Fixed( const Fixed& );
 		~Fixed();
-		Fixed& operator= ( const Fixed& ); 
+		
 		int getRawBits( void ) const;
 		void setRawBits( int const );
 
