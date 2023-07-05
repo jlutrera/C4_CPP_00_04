@@ -5,6 +5,11 @@ HumanA::HumanA(std::string s, Weapon& weapon) : _name(s), _weapon(weapon)
 
 }
 
+HumanA::~HumanA( void )
+{
+
+}
+
 void HumanA::attack( void )
 {
 	if (this->_weapon.getType() != "")

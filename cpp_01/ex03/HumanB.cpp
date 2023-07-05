@@ -12,6 +12,11 @@ HumanB::HumanB(std::string s)
 	this->_weapon = NULL;
 }
 
+HumanB::~HumanB( void )
+{
+
+}
+
 void HumanB::setWeapon(Weapon& w)
 {
 	this->_weapon = &w;

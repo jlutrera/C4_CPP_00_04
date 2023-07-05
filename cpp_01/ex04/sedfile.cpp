@@ -1,4 +1,14 @@
-#include "Sedfile.hpp"
+#include "SedFile.hpp"
+
+SedFile::SedFile( void )
+{
+
+}
+
+SedFile::~SedFile( void )
+{
+
+}
 
 SedFile::SedFile(char **argv)
 {
@@ -27,21 +37,26 @@ void SedFile::closeFiles()
 
 void SedFile::replace( void )
 {  
-	std::string s;
+	std::string s = "";
     std::size_t found;
-    std::string *ptr;
+    std::string ptr ;
 
 	while (!(this->infile).eof())
     {
     	std::getline(this->infile, s);
         found = s.find(this->_s1);
-        ptr = &s;
         while (found != std::string::npos)
         {
-            (*ptr).replace(found, (this->_s1).size(), this->_s2);
-            ptr += found + (this->_s2).size();
-            found = (*ptr).find(this->_s1);
+            s.replace(found, (this->_s1).size(), this->_s2);
+			std::cout << "s = " << s << std::endl;
+			ptr += s.substr(0, found + (this->_s2).size());
+			std::cout << "ptr =  " << ptr << std::endl;
+			s = s.substr(found + (this->_s2).size());
+			std::cout << "substr s =  " << s << std::endl;
+            found = s.find(this->_s1);
         }
-        this->outfile << s << std::endl;
+        this->outfile << ptr + s << std::endl;
+		s = "";
+		ptr = "";
     }
 }
