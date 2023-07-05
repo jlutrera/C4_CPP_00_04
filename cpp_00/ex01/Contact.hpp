@@ -25,6 +25,8 @@ class Contact{
 		std::string _getInput( std::string str ) const;
 
 	public:
+		Contact();
+		~Contact();
 		void    init( int i );
 		void    view( int index ) const;
 		void    display( int index ) const;
