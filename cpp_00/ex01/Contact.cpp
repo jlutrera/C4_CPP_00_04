@@ -15,7 +15,7 @@ std::string Contact::_getInput( std::string str ) const
 	std::getline(std::cin, input);
 	if (std::cin.good() && !input.empty())
 		return  input;
-	return "*";
+	return "(none)";
 }
 
 void	Contact::init( int i )
@@ -39,7 +39,7 @@ void	Contact::init( int i )
 void	Contact::view( int index ) const
 {
 	std::cout << "|" << std::setw( 3 ) << index << " ";
-	if (this->_firstName.empty() || this->_lastName.empty() || this->_nickName.empty())
+	if (this->_firstName.empty())
 		std::cout << "|" << RED << "         >> NO  CONTACT <<         " << RESET;
 	else
 	{
@@ -52,8 +52,7 @@ void	Contact::view( int index ) const
 
 void	Contact::display( int index ) const 
 {
-	if (this->_firstName.empty() || this->_lastName.empty() || this->_nickName.empty() ||
-	 	this->_phoneNumber.empty() || this->_darkestSecret.empty())
+	if (this->_firstName.empty())
 		std::cout << RED << "---->> NO CONTACT <<----" << RESET;
 	else
 	{

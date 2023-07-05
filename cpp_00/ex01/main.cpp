@@ -30,7 +30,7 @@ int main( void )
 	std::string	input;
 
 	std::cout << std::endl;
-	std::cout << "📞 Welcome to your PhoneBook" << std::endl;
+	std::cout << "* Welcome to your PhoneBook *" << std::endl;
 	std::cout << std::endl;
 	
 	usage();

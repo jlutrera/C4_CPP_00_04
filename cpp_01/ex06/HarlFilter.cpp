@@ -5,9 +5,7 @@ void HarlFilter::complainFilter(std::string level)
     std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
     int i = 0;
     while (i < 4 && levels[i].compare(level))
-	{
         i++;
-	}
 	switch (i)
 	{
 		case 0:
