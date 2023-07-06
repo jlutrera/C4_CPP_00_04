@@ -12,7 +12,7 @@ class HumanB{
 		HumanB();
 		~HumanB();
 		void setWeapon(Weapon& w);
-		void attack( void );
+		void attack();
 };
 
 #endif

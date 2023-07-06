@@ -10,9 +10,9 @@ class PhoneBook{
 	public:
 		PhoneBook();
 		~PhoneBook();
-		void	addContact( void );
-		void	printContacts( void ) const;
-		void	search( void ) const;
+		void	addContact();
+		void	printContacts() const;
+		void	search() const;
 };
 
 #endif

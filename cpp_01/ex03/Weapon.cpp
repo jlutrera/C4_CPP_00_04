@@ -1,5 +1,15 @@
 #include "Weapon.hpp"
  
+Weapon::Weapon( void )
+{
+
+}
+
+Weapon::~Weapon( void )
+{
+
+}
+
 Weapon::Weapon(std::string s)
 {
 	 this->setType(s);

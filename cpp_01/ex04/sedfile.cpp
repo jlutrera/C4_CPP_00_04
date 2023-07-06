@@ -12,7 +12,7 @@ SedFile::~SedFile( void )
 
 SedFile::SedFile(char **argv)
 {
-	this->_fin = argv[1];
+	this->_fin = argv[1];       
 	this->_fout = this->_fin + ".replace";
 	this->_s1 = argv[2];
 	this->_s2 = argv[3];
@@ -39,7 +39,7 @@ void SedFile::replace( void )
 {  
 	std::string s;
     std::size_t found;
-    std::string ptr ;
+    std::string ptr;
 
 	while (!(this->_infile).eof())
     {
@@ -47,14 +47,10 @@ void SedFile::replace( void )
         found = s.find(this->_s1);
 		ptr = "";
         while (found != std::string::npos)
-        {
+        {    
             s.replace(found, (this->_s1).size(), this->_s2);
-			//std::cout << "s = " << s << std::endl;
 			ptr += s.substr(0, found + (this->_s2).size());
-			//std::cout << "ptr =  " << ptr << std::endl;
-			s.substr(found + (this->_s2).size());
-			//s.erase(0, found + (this->_s2).size());<----------------------probar
-			//std::cout << "substr s =  " << s << std::endl;
+			s.erase(0, found + (this->_s2).size());
             found = s.find(this->_s1);
         }
         this->_outfile << ptr + s << std::endl;

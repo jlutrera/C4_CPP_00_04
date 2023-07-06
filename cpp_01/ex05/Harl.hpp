@@ -16,6 +16,6 @@ class Harl{
 		void error();
 };
 
-typedef void (Harl::* ptrf)( void );
+typedef void (Harl::* ptrf)();
 
 #endif
