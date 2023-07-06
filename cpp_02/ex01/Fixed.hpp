@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:46:23 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/06 13:49:54 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/07/06 18:01:59 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 #  include <cmath>
 
 #  define WIDTH 8;
+
+typedef struct s_fixpt{
+	size_t fvalue;
+	size_t ivalue;
+	size_t sign;
+} fixpt;
 
 class Fixed{
 	public:
@@ -31,6 +37,7 @@ class Fixed{
 		void setRawBits( int const raw );
 		float toFloat() const;
 		int toInt() const;
+		fixpt fixnb;
 	
 	private:
 		int _binary_point;
