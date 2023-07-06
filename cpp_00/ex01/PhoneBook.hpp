@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:36:06 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/06 13:36:11 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/07/06 14:05:12 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ class PhoneBook{
 		void	printContacts() const;
 		void	search() const;
 };
-
+ 
 #endif

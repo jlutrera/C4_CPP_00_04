@@ -9,7 +9,7 @@ Fixed::Fixed( void )
 	std::cout << "Default constructor called" << std::endl;
 }
 
- Fixed& Fixed::operator =( const Fixed& a)
+ Fixed& Fixed::operator = ( const Fixed& a)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &a)
@@ -85,7 +85,7 @@ int Fixed::toInt( void ) const
 	return s * this->ivalue;
 }
 
-std::ostream& operator << (std::ostream &o, const Fixed& p )
+std::ostream& operator << ( std::ostream& o, const Fixed& p )
 {
 	if ( p.sign )
 		o << "-";

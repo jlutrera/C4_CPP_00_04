@@ -7,6 +7,7 @@ RM		= 	rm -rf
 
 #Files
 SRC		=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+HEADER	=	HumanA.hpp HumanB.hpp Weapon.hpp
 OBJ		= 	$(SRC:.cpp=.o)
 
 #Colors:
@@ -19,7 +20,7 @@ CURSIVE	=	\e[33;3m
 #Rules
 all		: 	$(NAME)
 
-%.o		:	%.cpp
+%.o		:	%.cpp $(HEADER)
 			printf "$(CURSIVE)$(GRAY) 	- Compiling $@... $(RESET)\n"
 			$(CC) $(CFLAGS) -c $< -o $@
 

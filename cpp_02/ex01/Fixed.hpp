@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/06 13:46:23 by jutrera-          #+#    #+#             */
+/*   Updated: 2023/07/06 13:49:54 by jutrera-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 #  define FIXED_HPP
 
@@ -9,27 +21,21 @@
 class Fixed{
 	public:
 		Fixed();
-		Fixed (const int);
-		Fixed (const float);
+		Fixed (const int n );
+		Fixed (const float n );
 		~Fixed();
-		Fixed& operator = ( const Fixed& );
-		Fixed( const Fixed& );
+		Fixed& operator = ( const Fixed& a );
+		Fixed( const Fixed& a );
 		
-		int getRawBits( void ) const;
-		void setRawBits( int const );
-		float toFloat( void ) const;
-		int toInt( void ) const;
-		int fvalue;
-		int ivalue;
-		bool sign;
+		int getRawBits() const;
+		void setRawBits( int const raw );
+		float toFloat() const;
+		int toInt() const;
 	
 	private:
 		int _binary_point;
 		static const int _nb_bits = WIDTH;
-
-		float _value;
-
 };
 
-std::ostream& operator << (std::ostream&, const Fixed& );
+std::ostream& operator << (std::ostream& o, const Fixed& p);
 #endif

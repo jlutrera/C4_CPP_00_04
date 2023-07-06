@@ -14,12 +14,13 @@ CURSIVE	=	\e[33;3m
 
 #Files
 SRC		=	Account.cpp tests.cpp
+HEADER	=	Account.hpp
 OBJ		= 	$(SRC:.cpp=.o)
 
 #Rules
 all		: 	$(NAME)
 
-%.o		:	%.cpp
+%.o		:	%.cpp $(HEADER)
 			printf "$(CURSIVE)$(GRAY) 	- Compiling $@... $(RESET)\n"
 			$(CC) $(CFLAGS) -c $< -o $@
 

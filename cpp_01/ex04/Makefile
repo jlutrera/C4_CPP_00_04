@@ -6,7 +6,8 @@ CFLAGS	= 	-Wall -Wextra -Werror -std=c++98
 RM		= 	rm -rf
 
 #Files
-SRC		=	SedFile.cpp main.cpp 
+SRC		=	SedFile.cpp main.cpp
+HEADER	=	SedFile.hpp
 OBJ		= 	$(SRC:.cpp=.o)
 
 #Colors:
@@ -19,7 +20,7 @@ CURSIVE	=	\e[33;3m
 #Rules
 all		: 	$(NAME)
 
-%.o		:	%.cpp
+%.o		:	%.cpp $(HEADER)
 			printf "$(CURSIVE)$(GRAY) 	- Compiling $@... $(RESET)\n"
 			$(CC) $(CFLAGS) -c $< -o $@
 

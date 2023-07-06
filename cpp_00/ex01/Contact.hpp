@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:35:30 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/06 13:35:44 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/07/06 14:03:18 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,8 @@ class Contact{
 		void    view( int index ) const;
 		void    display( int index ) const;
 };
+
+
+
 
 #endif

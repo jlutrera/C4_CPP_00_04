@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/06 13:45:21 by jutrera-          #+#    #+#             */
+/*   Updated: 2023/07/06 13:45:22 by jutrera-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 #  define FIXED_HPP
 
@@ -6,12 +18,12 @@
 class Fixed{
 	public:
 		Fixed();
-		Fixed& operator= ( const Fixed& ); 
-		Fixed( const Fixed& );
+		Fixed& operator= ( const Fixed& a ); 
+		Fixed( const Fixed& a );
 		~Fixed();
 		
-		int getRawBits( void ) const;
-		void setRawBits( int const );
+		int getRawBits() const;
+		void setRawBits( int const raw );
 
 	private:
 		int _fixpoint;
