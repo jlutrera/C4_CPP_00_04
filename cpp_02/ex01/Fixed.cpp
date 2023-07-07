@@ -1,16 +1,32 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(void)
+int Fixed::getRawBits( void ) const 
 {
-    std::cout << "Default constructor called" << std::endl;
-	this->_binaryPoint = 0;
+	//std::cout << "getRawBits member function called" << std::endl;
+    return this->_rawBits;
 }
 
-Fixed& Fixed::operator=( const Fixed & a ) 
+void    Fixed::setRawBits( int const raw ) 
+{
+    this->_rawBits = raw;
+}
+
+int		Fixed::getNbBitsFracc() const
+{
+	return this->_nbBitsFracc;
+}
+
+Fixed::Fixed( void )
+{
+    std::cout << "Default constructor called" << std::endl;
+	this->setRawBits(0);
+}
+
+Fixed & Fixed::operator = ( const Fixed & a ) 
 {
     std::cout << "Copy assignment operator called" << std::endl;
     if ( this != &a )
-        this->setRawBits(a.getRawBits());
+        this->setRawBits( a.getRawBits() );
     return *this;
 }
 
@@ -25,36 +41,26 @@ Fixed::~Fixed()
     std::cout << "Destructor called" << std::endl;
 }
 
-int Fixed::getRawBits( void ) const 
-{
-    return this->_binaryPoint;
-}
-
-void    Fixed::setRawBits( int const raw ) 
-{
-    this->_binaryPoint = raw;
-}
-
 Fixed::Fixed( const int n )
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_binaryPoint = n << this->_nbBits;
+	this->setRawBits(n * ( 1 << this->getNbBitsFracc() ));
 }
 
 Fixed::Fixed( const float n )
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_binaryPoint = roundf( n * ( 1 << this->_nbBits ));
+	this->setRawBits( roundf( n * ( 1 << this->getNbBitsFracc() )));
 }
 
 float   Fixed::toFloat( void ) const 
 {
-    return static_cast<float>( this->getRawBits() ) / ( 1 << this->_nbBits );
+    return static_cast<float>( this->getRawBits() ) / ( 1 << this->getNbBitsFracc() );
 }
 
 int     Fixed::toInt( void ) const 
 {
-    return this->_binaryPoint >> this->_nbBits;
+    return this->getRawBits() >> this->getNbBitsFracc();
 }
 
 std::ostream & operator << ( std::ostream & o, Fixed const & p ) 

@@ -30,12 +30,13 @@ class Fixed{
 		
 		int 	getRawBits() const;
 		void	setRawBits( int const raw );
+		int		getNbBitsFracc() const;
 		float 	toFloat() const;
 		int 	toInt() const;
 	
 	private:
-		int 				_binaryPoint;
-		static const int	_nbBits = WIDTH;
+		int 				_rawBits;
+		static const int	_nbBitsFracc = WIDTH;
 };
 
 std::ostream & operator << ( std::ostream & o, const Fixed & p );
