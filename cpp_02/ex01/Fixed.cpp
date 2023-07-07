@@ -1,96 +1,64 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed( void )
+Fixed::Fixed(void)
 {
-	this->_binary_point = 0;
-	this->fvalue = 0;
-	this->ivalue = 0;
-	this->sign = 0;
-	std::cout << "Default constructor called" << std::endl;
+    std::cout << "Default constructor called" << std::endl;
+	this->_binaryPoint = 0;
 }
 
- Fixed& Fixed::operator = ( const Fixed& a)
+Fixed& Fixed::operator=( const Fixed & a ) 
 {
-	std::cout << "Assignation operator called" << std::endl;
-	if (this != &a)
-	{
-		this->setRawBits(a.getRawBits());
-		this->fvalue = a.fvalue;
-		this->ivalue = a.ivalue;
-		this->sign = a.sign;
-	}
-	return *this;
+    std::cout << "Copy assignment operator called" << std::endl;
+    if ( this != &a )
+        this->setRawBits(a.getRawBits());
+    return *this;
 }
 
-Fixed::Fixed( const Fixed& a)
+Fixed::Fixed( const Fixed & a ) 
 {
-	std::cout << "Copy constructor called" << std::endl;
-	*this = a;
+    std::cout << "Copy constructor called" << std::endl;
+    *this = a;
 }
 
-Fixed::~Fixed( void )
+Fixed::~Fixed() 
 {
-	std::cout << "Destructor called" << std::endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
-int Fixed::getRawBits( void ) const
+int Fixed::getRawBits( void ) const 
 {
-	std::cout << "getRawBits member function called" << std::endl;
-	return _binary_point;
+    return this->_binaryPoint;
 }
 
-void Fixed::setRawBits( int const raw )
+void    Fixed::setRawBits( int const raw ) 
 {
-	this->_binary_point = raw;
+    this->_binaryPoint = raw;
 }
 
-Fixed::Fixed (const int n)
+Fixed::Fixed( const int n )
 {
-	int s = n;
-	size_t e = WIDTH;
- 
-	if (s < 0)
-		s *= -1;
-	while (s > 2 ^ e)
-		s /= 2;
-	this->ivalue = s;
-	this->fvalue = 0;
-	this->sign = (n < 0);
+	std::cout << "Int constructor called" << std::endl;
+	this->_binaryPoint = n << this->_nbBits;
 }
 
-Fixed::Fixed (const float n)
+Fixed::Fixed( const float n )
 {
-	float s = n;
-
-	if (s < 0)
-		s *= -1;
-	this->ivalue = roundf(s);
-	this->fvalue = 100 * (s - this->ivalue);
-	this->sign = (n < 0);
+	std::cout << "Float constructor called" << std::endl;
+	this->_binaryPoint = roundf( n * ( 1 << this->_nbBits ));
 }
 
-float Fixed::toFloat( void ) const
+float   Fixed::toFloat( void ) const 
 {
-	int s = 1;
-	if ( this->sign )
-		s = -1;
-	return s * ( this->ivalue + this->fvalue ) / ( 10 ^ this->_binary_point );
+    return static_cast<float>( this->getRawBits() ) / ( 1 << this->_nbBits );
 }
 
-int Fixed::toInt( void ) const
+int     Fixed::toInt( void ) const 
 {
-	int s = 1;
-	if ( this->sign )
-		s = -1;
-	return s * this->ivalue;
+    return this->_binaryPoint >> this->_nbBits;
 }
 
-std::ostream& operator << ( std::ostream& o, const Fixed& p )
+std::ostream & operator << ( std::ostream & o, Fixed const & p ) 
 {
-	if ( p.sign )
-		o << "-";
-	o << p.ivalue;
-	if (p.fvalue != 0)
-		o << "." << p.fvalue; 
-	return o;
+    o << p.toFloat();
+    return o;
 }
