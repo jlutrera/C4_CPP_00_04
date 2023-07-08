@@ -18,8 +18,8 @@
 class Fixed{
 	public:
 		Fixed();
-		Fixed& operator= ( const Fixed& a ); 
-		Fixed( const Fixed& a );
+		Fixed & operator = ( const Fixed & a ); 
+		Fixed( const Fixed & a );
 		~Fixed();
 		
 		int getRawBits() const;

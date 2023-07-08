@@ -14,11 +14,11 @@
 
 Fixed::Fixed( void )
 {
-	this->_fixpoint = 0;
 	std::cout << "Default constructor called" << std::endl;
+	this->_fixpoint = 0;
 }
 
- Fixed& Fixed::operator=( const Fixed& a)
+ Fixed & Fixed::operator = ( const Fixed & a)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &a)
@@ -26,7 +26,7 @@ Fixed::Fixed( void )
 	return *this;
 }
 
-Fixed::Fixed( const Fixed& a)
+Fixed::Fixed( const Fixed & a)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = a;
