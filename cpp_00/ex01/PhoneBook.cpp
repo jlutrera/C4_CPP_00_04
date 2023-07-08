@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:35:55 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/06 13:35:57 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/07/08 10:20:12 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	PhoneBook::addContact( void )
 
 void	PhoneBook::printContacts( void ) const
 {
-	std::cout << YELLOW << "             PHONBOOK CONTACTS" << RESET << std::endl;
+	std::cout << YELLOW << "            PHONEBOOK CONTACTS" << RESET << std::endl;
 	std::cout << "------------------------------------------" << std::endl;
 	for (size_t i = 0; i < 8; i++)
 		this->_contacts[i].view(i);
