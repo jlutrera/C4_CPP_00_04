@@ -14,7 +14,10 @@
 
 SedFile::SedFile( void )
 {
-
+	this->_fin = "";
+	this->_fout = "";
+	this->_s1 = "";
+	this->_s2 = "";
 }
 
 SedFile::~SedFile( void )

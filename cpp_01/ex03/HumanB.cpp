@@ -34,7 +34,7 @@ void HumanB::setWeapon(Weapon& w)
 	this->_weapon = &w;
 }
 
-void HumanB::attack( void )
+void HumanB::attack( void ) const
 {
 	if (this->_weapon != NULL && this->_weapon->getType() != "")
 	{

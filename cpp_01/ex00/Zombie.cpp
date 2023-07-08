@@ -27,7 +27,7 @@ Zombie::~Zombie( void )
 	std::cout << "Zombie " << this->_name << " destroyed.\n" << std::endl;
 }
 
-void Zombie::announce( void )  const
+void Zombie::announce( void ) const
 {
-	std::cout << "    " << this->_name << ":" << "BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << "\t" << this->_name << ":" << "BraiiiiiiinnnzzzZ..." << std::endl;
 }

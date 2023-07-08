@@ -45,12 +45,14 @@ Fixed::Fixed( const int n )
 {
 	std::cout << "Int constructor called" << std::endl;
 	this->setRawBits(n * ( 1 << this->getNbBitsFracc() ));
+	std::cout << "valor de raw para enteros = " << this->getRawBits() << std::endl;
 }
 
 Fixed::Fixed( const float n )
 {
 	std::cout << "Float constructor called" << std::endl;
 	this->setRawBits( roundf( n * ( 1 << this->getNbBitsFracc() )));
+	std::cout << "valor de raw para float = " << this->getRawBits() << std::endl;
 }
 
 float   Fixed::toFloat( void ) const 

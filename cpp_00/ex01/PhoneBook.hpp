@@ -18,12 +18,14 @@
 class PhoneBook{
 	private:
 	    Contact	_contacts[8];
+
 	public:
 		PhoneBook();
 		~PhoneBook();
+		int 	ft_one_order( std::string input ) const;
+		void	usage( int e ) const;
 		void	addContact();
-		void	printContacts() const;
-		void	search() const;
+		void	searchContact() const;
 };
  
 #endif

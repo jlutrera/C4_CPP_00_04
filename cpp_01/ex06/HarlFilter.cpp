@@ -22,7 +22,7 @@ HarlFilter::~HarlFilter( void )
 
 }
 
-void HarlFilter::complainFilter(std::string level)
+void HarlFilter::complainFilter(std::string level) const
 {
     std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
     int i = 0;
@@ -44,7 +44,7 @@ void HarlFilter::complainFilter(std::string level)
 	}
 }
 
-void HarlFilter::debug( void )
+void HarlFilter::debug( void ) const
 {
 	std::cout << "[ DEBUG ]" << std::endl;
 	std::cout << "I love having extra bacon for my";
@@ -52,14 +52,14 @@ void HarlFilter::debug( void )
 	std::cout << std::endl << std::endl;
 }
 
-void HarlFilter::error( void )
+void HarlFilter::error( void ) const
 {
 	std::cout << "[ ERROR ]" << std::endl;
 	std::cout << "This is unacceptable! I want to speak to the manager now.";
 	std::cout << std::endl << std::endl;
 }
 
-void HarlFilter::info( void )
+void HarlFilter::info( void ) const
 {
 	std::cout << "[ INFO ]" << std::endl;
 	std::cout << "cannot believe adding extra bacon costs more money.";
@@ -68,7 +68,7 @@ void HarlFilter::info( void )
 	std::cout << std::endl << std::endl;
 }
 
-void HarlFilter::warning( void )
+void HarlFilter::warning( void ) const
 {
 	std::cout << "[ WARNING ]" << std::endl;
 	std::cout << "I think I deserve to have some extra bacon for free.";

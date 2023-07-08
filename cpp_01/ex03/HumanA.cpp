@@ -22,7 +22,7 @@ HumanA::~HumanA( void )
 
 }
 
-void HumanA::attack( void )
+void HumanA::attack( void ) const
 {
 	if (this->_weapon.getType() != "")
 	{

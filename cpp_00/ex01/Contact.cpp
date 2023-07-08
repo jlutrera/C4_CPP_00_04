@@ -22,6 +22,7 @@ Contact::~Contact( void )
 
 }
 
+// 10 characters max., with a dot at the end
 std::string Contact::_printLen( std::string str ) const
 {
 	if (str.length() > 10)
@@ -40,6 +41,7 @@ std::string Contact::_getInput( std::string str ) const
 	return "(none)";
 }
 
+// It adds the data of a new contact
 void	Contact::init( int i )
 {
 	std::cout << "Please enter the following data:" << std::endl;
@@ -57,7 +59,7 @@ void	Contact::init( int i )
 	std::cout << std::endl;
 }
 
-
+// It prints a raw in the searching table
 void	Contact::view( int index ) const
 {
 	std::cout << "|" << std::setw( 3 ) << index << " ";
@@ -72,7 +74,8 @@ void	Contact::view( int index ) const
 	std::cout << "|" << std::endl;
 }
 
-void	Contact::display( int index ) const 
+// It prints the data of a searched contact
+void	Contact::display( int index ) const
 {
 	if (this->_firstName.empty())
 		std::cout << RED << "---->> NO CONTACT <<----" << RESET;
