@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:36:31 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/06 13:37:32 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/07/08 13:45:16 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,9 @@ int Account::_totalAmount= 0;
 int Account::_totalNbDeposits= 0;
 int Account::_totalNbWithdrawals = 0;
 
-// We need to remove the "static" keyword
-// As long as you have the static keyword in the header file, the compiler knows it's a static class method, 
-// so you should not and cannot specify it in the definition in the source file.
-
-void Account::_displayTimestamp()
+Account::Account( void )
 {
-    std::time_t result = std::time(NULL);
 
-    std::cout << std::setfill('0') <<"[" << 1900 + std::localtime(&result)->tm_year
-              << std::setw(2) << 1 + std::localtime(&result)->tm_mon
-              <<  std::setw(2) << std::localtime(&result)->tm_mday
-              <<  "_"
-              <<  std::setw(2) << std::localtime(&result)->tm_hour
-              <<  std::setw(2) << std::localtime(&result)->tm_min
-              <<  std::setw(2) << std::localtime(&result)->tm_sec 
-              << "] " << std::flush;
 }
 
 Account::Account(int initial_deposit) 
@@ -61,7 +48,11 @@ Account::~Account( void )
               << "closed" << std::endl;
 }
 
-// Accessing class private infos
+int Account::checkAmount( void ) const 
+{
+    return _amount;
+}
+
 int Account::getNbAccounts( void ) 
 {
     return _nbAccounts;
@@ -82,6 +73,21 @@ int Account::getNbWithdrawals( void )
     return _totalNbWithdrawals;
 }
 
+// We need to remove the "static" keyword because the compiler knows it's a static class method
+void Account::_displayTimestamp()
+{
+    std::time_t result = std::time(NULL);
+
+    std::cout << std::setfill('0') <<"[" << 1900 + std::localtime(&result)->tm_year
+              << std::setw(2) << 1 + std::localtime(&result)->tm_mon
+              <<  std::setw(2) << std::localtime(&result)->tm_mday
+              <<  "_"
+              <<  std::setw(2) << std::localtime(&result)->tm_hour
+              <<  std::setw(2) << std::localtime(&result)->tm_min
+              <<  std::setw(2) << std::localtime(&result)->tm_sec 
+              << "] " << std::flush;
+}
+
 void    Account::displayAccountsInfos( void ) 
 {
     _displayTimestamp();
@@ -91,7 +97,6 @@ void    Account::displayAccountsInfos( void )
               << "withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
-// Accessing account detail private info
 void    Account::makeDeposit( int deposit ) 
 {
     this->_displayTimestamp();
@@ -103,7 +108,7 @@ void    Account::makeDeposit( int deposit )
     _amount += deposit;
     std::cout << "deposit:" << deposit << ";"
               << "amount:" << _amount << ";"
-              << "nb_deposit:" << _nbDeposits << std::endl;
+              << "nb_deposits:" << _nbDeposits << std::endl;
 }
 
 bool    Account::makeWithdrawal(int withdrawal ) 
@@ -123,13 +128,8 @@ bool    Account::makeWithdrawal(int withdrawal )
     _totalAmount -= withdrawal;
     _amount -= withdrawal;
     std::cout << "amount:" << _amount << ";"
-              << "nb_deposit:" << _nbDeposits << std::endl;
+              << "nb_withdrawals:" << _nbWithdrawals << std::endl;
     return true;
-}
-
-int     Account::checkAmount( void ) const 
-{
-    return _amount;
 }
 
 void    Account::displayStatus( void ) const 
