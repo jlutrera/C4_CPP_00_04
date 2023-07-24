@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:38:41 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/06 13:38:42 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/07/24 12:08:27 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@
 # include <iostream>
 
 class Zombie{
-	private:
-		std::string	_name;
+
 	public:
 		Zombie(std::string name);
 		~Zombie();
 		Zombie();
 		void announce() const;
+
+	private:
+		std::string	_name;
 };
 
 void	randomChump( std::string name );

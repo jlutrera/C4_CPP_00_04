@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:35:30 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/06 14:03:18 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/07/24 12:07:43 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ const std::string YELLOW 	= "\033[33m";
 const std::string BLUE 		= "\033[34m";
 
 class Contact{
+	public:
+		Contact();
+		~Contact();
+		void    init( int i );
+		void    view( int index ) const;
+		void    display( int index ) const;
 	private:
 		std::string _firstName;
 		std::string _lastName;
@@ -35,16 +41,6 @@ class Contact{
 		int         _index;
 		std::string _printLen( std::string str ) const;
 		std::string _getInput( std::string str ) const;
-
-	public:
-		Contact();
-		~Contact();
-		void    init( int i );
-		void    view( int index ) const;
-		void    display( int index ) const;
 };
-
-
-
 
 #endif
