@@ -12,7 +12,7 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string s, Weapon& weapon) : _name(s), _weapon(weapon)
+HumanA::HumanA(std::string s, Weapon &weapon) : _name(s), _weapon(weapon)
 {
 
 }
@@ -24,11 +24,11 @@ HumanA::~HumanA( void )
 
 void HumanA::attack( void ) const
 {
-	if (this->_weapon.getType() != "")
-	{
-		std::cout << this->_name << " attacks with their ";
-		std::cout << this->_weapon.getType()<< std::endl;
-	}
-	else
-		std::cout << this->_name << " does not have a weapon to attack." << std::endl;
+	if (this->_weapon.getType() == "" )
+		this->_weapon.setType("personal weapons");
+	
+	std::cout << this->_name 
+			  << " attacks with their "
+			  << this->_weapon.getType()
+			  << std::endl;
 }

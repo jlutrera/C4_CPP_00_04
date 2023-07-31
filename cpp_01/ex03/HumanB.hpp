@@ -18,14 +18,14 @@
 class HumanB{
 
 	public:
-		HumanB( std::string name);
+		HumanB( std::string name );
 		HumanB();
 		~HumanB();
-		void setWeapon(Weapon& w);
+		void setWeapon(Weapon & w);
 		void attack() const;
 	private:
 		std::string _name;
-		Weapon* _weapon;
+		Weapon * _weapon;
 };
 
 #endif

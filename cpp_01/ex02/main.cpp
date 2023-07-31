@@ -15,8 +15,8 @@
 int main( void )
 {
     std::string s = "HI THIS IS BRAIN";
-    std::string* stringPTR = &s;  //puntero a s
-    std::string& stringREF = s; // referencia a s
+    std::string * stringPTR = &s;  //puntero a s
+    std::string & stringREF = s; // referencia a s
 
     std::cout << "Dirección del string   : " << &s << std::endl;
     std::cout << "Contenido de stringPTR : " << stringPTR << std::endl;

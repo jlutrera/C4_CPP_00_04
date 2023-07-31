@@ -27,17 +27,13 @@ int main( void )
 			return 0;
 		}
 	
-		std::cout << "\nCreating zombie " << name << " on the heap." << std::endl;
-		Zombie *zombie1 = newZombie( name );
-		zombie1->announce();
-		delete( zombie1 );
+		std::cout << "\nCreating zombie " << name + "1" << " on the heap. (*newZombie)" << std::endl;
+		Zombie *azombie = newZombie( name + "1");
+		azombie->announce();
+		delete( azombie );
 
-		std::cout << "\nCreating zombie " << name << " on the stack." << std::endl;
-		Zombie zombie2( name );
-		zombie2.announce();
-		
-		std::cout << "\nCalling randomChump()." << std::endl;
-		randomChump( "Chumpy" );
+		std::cout << "\nCreating zombie " << name + "2" << " on the stack. (randomChump)" << std::endl;
+		randomChump( name + "2" );
 
 		return 0;
 }

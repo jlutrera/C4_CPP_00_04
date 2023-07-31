@@ -22,23 +22,19 @@ int main( void )
 	std::cin >> name;
 	
 	// If ctrl + D is pressed, finish
-	if (std::cin.eof())
+	if ( std::cin.eof() || !std::cin.good() )
 	{
 		std::cout << "Exit ! " << std::endl;
 		return 0;
 	}
 	
-	do
+	std::cout << "How many zombies do you want ? ";
+	std::cin >> N;
+	if ( std::cin.eof() || N <= 0 )
 	{
-		std::cout << "How many zombies do you want ? ";
-		std::cin >> N;
-		if (std::cin.eof())
-		{
-			std::cout << "Exit ! " << std::endl;
-			return 0;
-		}
+		std::cout << "Exit ! " << std::endl;
+		return 0;
 	}
-	while ( N <= 0 );
 
 	std::cout << "\nCreating zombies " << std::endl;
 	Zombie *horde = zombieHorde( N, name );

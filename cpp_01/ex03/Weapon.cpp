@@ -22,17 +22,17 @@ Weapon::~Weapon( void )
 
 }
 
-Weapon::Weapon(std::string s)
+Weapon::Weapon( std::string new_type )
 {
-	 this->setType(s);
+	 this->setType(new_type);
 }
 
-std::string& Weapon::getType( void )
+std::string & Weapon::getType( void )
 {
 	return (this->_type);
 }
 
-void Weapon::setType(std::string new_s)
+void Weapon::setType( std::string new_type )
 {	
-	this->_type = new_s;
+	this->_type = new_type;
 }

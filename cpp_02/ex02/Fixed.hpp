@@ -19,6 +19,7 @@
 #  define WIDTH 8;
 
 class Fixed{
+	
 	public:
 		Fixed();
 		Fixed( const int n );

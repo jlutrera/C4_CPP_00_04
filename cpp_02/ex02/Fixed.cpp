@@ -1,8 +1,10 @@
 #include "Fixed.hpp"
 
+Fixed t = 1;
+Fixed f = 0;
+
 int Fixed::getRawBits( void ) const 
 {
-	//std::cout << "getRawBits member function called" << std::endl;
     return this->_rawBits;
 }
 
@@ -45,14 +47,12 @@ Fixed::Fixed( const int n )
 {
 	std::cout << "Int constructor called" << std::endl;
 	this->setRawBits(n * ( 1 << this->getNbBitsFracc() ));
-	std::cout << "valor de raw para enteros = " << this->getRawBits() << std::endl;
 }
 
 Fixed::Fixed( const float n )
 {
 	std::cout << "Float constructor called" << std::endl;
 	this->setRawBits( roundf( n * ( 1 << this->getNbBitsFracc() )));
-	std::cout << "valor de raw para float = " << this->getRawBits() << std::endl;
 }
 
 float   Fixed::toFloat( void ) const 
@@ -69,4 +69,106 @@ std::ostream & operator << ( std::ostream & o, Fixed const & p )
 {
     o << p.toFloat();
     return o;
+}
+
+Fixed & Fixed::operator > ( const Fixed & a )
+{
+	if (this->toFloat() > a.toFloat())
+		return t;
+	return f;
+}
+
+Fixed & Fixed::operator < ( const Fixed & a )
+{
+	if (this->toFloat() < a.toFloat())
+		return t;
+	return f;
+}
+
+Fixed & Fixed::operator >= ( const Fixed & a )
+{
+	if (this->toFloat() >= a.toFloat())
+		return t;
+	return f;
+}
+
+Fixed & Fixed::operator <= ( const Fixed & a )
+{
+	if (this->toFloat() <= a.toFloat())
+		return t;
+	return f;
+}
+
+Fixed & Fixed::operator == ( const Fixed & a )
+{
+	if (this->toFloat() == a.toFloat())
+		return t;
+	return f;
+}
+
+Fixed & Fixed::operator != ( const Fixed & a )
+{
+	if (this->toFloat() != a.toFloat())
+		return t;
+	return f;
+}
+
+Fixed & Fixed::operator + ( const Fixed & a )
+{
+	return Fixed((this->toFloat() + a.toFloat()));
+}
+
+Fixed & Fixed::operator - ( const Fixed & a )
+{
+	return Fixed((this->toFloat() - a.toFloat()));
+}
+
+Fixed & Fixed::operator * ( const Fixed & a )
+{
+	return Fixed((this->toFloat() * a.toFloat()));
+}
+
+Fixed & Fixed::operator / ( const Fixed & a )
+{
+	return Fixed((this->toFloat() / a.toFloat()));
+}
+
+Fixed & Fixed::operator ++ ( int a )
+{
+
+}
+
+Fixed & Fixed::operator -- ( int a )
+{
+
+}
+
+Fixed & Fixed::operator ++ ( )
+{
+
+}
+
+Fixed & Fixed::operator -- ( )
+{
+
+}
+
+Fixed & Fixed::min(const Fixed &a, const Fixed & b)
+{
+
+}
+
+Fixed & Fixed::min(Fixed & a, Fixed & b)
+{
+
+}
+
+Fixed & Fixed::max(const Fixed &a, const Fixed & b)
+{
+
+}
+
+Fixed & Fixed::max(Fixed & a, Fixed & b)
+{
+
 }
