@@ -14,6 +14,7 @@
 # define ZOMBIE_HPP
 
 # include <iostream>
+# include <sstream>
 # include <string>
 
 class Zombie{
