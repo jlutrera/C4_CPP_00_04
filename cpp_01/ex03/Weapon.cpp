@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:41:25 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/06 13:41:26 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/01 13:45:58 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Weapon::Weapon( std::string new_type )
 	 this->setType(new_type);
 }
 
-std::string & Weapon::getType( void )
+const std::string & Weapon::getType( void )
 {
 	return (this->_type);
 }

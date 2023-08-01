@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:46:23 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/07 12:43:53 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/01 11:57:21 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 #  include <iostream>
 #  include <cmath>
-
-#  define WIDTH 8;
 
 class Fixed{
 	public:
@@ -36,7 +34,7 @@ class Fixed{
 	
 	private:
 		int 				_rawBits;
-		static const int	_nbBitsFracc = WIDTH;
+		static const int	_nbBitsFracc = 8;
 };
 
 std::ostream & operator << ( std::ostream & o, const Fixed & p );
