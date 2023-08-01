@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:41:44 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/06 13:41:45 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/01 09:40:06 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	SedFile f(argv);
     if (f.openFiles())
 		return std::cerr << "File error." << std::endl, 1;
-	f.replace();
+	f.ft_replace();
     f.closeFiles();
     return 0;
 }

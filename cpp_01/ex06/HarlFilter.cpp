@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:42:49 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/06 13:42:51 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/01 11:06:14 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void HarlFilter::error( void ) const
 void HarlFilter::info( void ) const
 {
 	std::cout << "[ INFO ]" << std::endl;
-	std::cout << "cannot believe adding extra bacon costs more money.";
+	std::cout << "Cannot believe adding extra bacon costs more money.";
 	std::cout << " You didn’t put enough bacon in my burger!";
 	std::cout << " If you did, I wouldn’t be asking for more!";
 	std::cout << std::endl << std::endl;

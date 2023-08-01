@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:42:14 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/06 15:48:32 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/01 10:42:15 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@
 
 class SedFile{
 	public:
-		SedFile();
 		~SedFile();
 		SedFile(char **argv);
 		int openFiles();
 		void closeFiles();
-		void replace();
+		void ft_replace();
 	private:
 		std::ifstream _infile;
  		std::ofstream _outfile;

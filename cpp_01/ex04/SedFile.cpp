@@ -1,24 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sedfile.cpp                                        :+:      :+:    :+:   */
+/*   SedFile.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:41:53 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/06 15:48:24 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/01 10:42:23 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SedFile.hpp"
-
-SedFile::SedFile( void )
-{
-	this->_fin = "";
-	this->_fout = "";
-	this->_s1 = "";
-	this->_s2 = "";
-}
 
 SedFile::~SedFile( void )
 {
@@ -50,7 +42,7 @@ void SedFile::closeFiles()
 	_outfile.close();
 }
 
-void SedFile::replace( void )
+void SedFile::ft_replace( void )
 {  
 	std::string s;
     std::size_t found;
@@ -61,13 +53,13 @@ void SedFile::replace( void )
     	std::getline(this->_infile, s);
         found = s.find(this->_s1);
 		ptr = "";
+		
         while (found != std::string::npos)
         {    
-            s.replace(found, (this->_s1).size(), this->_s2);
-			ptr += s.substr(0, found + (this->_s2).size());
-			s.erase(0, found + (this->_s2).size());
-            found = s.find(this->_s1);
+			ptr += s.substr( 0, found ) + this->_s2;
+			s.erase( 0, found + (this->_s1).length() );
+            found = s.find( this->_s1 );
         }
-        this->_outfile << ptr + s << std::endl;
+        this->_outfile << ptr + s;
     }
 }
