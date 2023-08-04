@@ -14,9 +14,12 @@
 
 int main(int argc, char **argv)
 {
-    if (argc != 4)
-        return std::cout << "Error: Bad arguments number." << std::endl, 1;
+	if (argc != 4)
+    {
+		std::cout << "Error: Bad arguments number." << std::endl;
+		return 1;
+	}
 	SedFile f(argv);
 	f.ft_replace();
-    return 0;
+	return 0;
 }

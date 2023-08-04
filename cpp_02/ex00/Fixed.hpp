@@ -26,16 +26,16 @@
 class Fixed{
 	public:
 		Fixed();
-		Fixed & operator = ( const Fixed & a ); 
 		Fixed( const Fixed & a );
 		~Fixed();
+		Fixed & operator = ( const Fixed & a ); 
 		
 		int getRawBits() const;
 		void setRawBits( int const raw );
 
 	private:
-		int _fixpoint;
-		static const int _nb_bits_frac = 8;
+		int _fixPoint;
+		static const int _nbBitsFrac = 8;
 };
 
 #endif

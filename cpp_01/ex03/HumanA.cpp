@@ -24,11 +24,11 @@ HumanA::~HumanA( void )
 
 void HumanA::attack( void ) const
 {
-	if (this->_weapon.getType() == "" )
-		this->_weapon.setType("personal weapons");
+	if (_weapon.getType() == "" )
+		_weapon.setType("personal weapons");
 	
-	std::cout << this->_name 
+	std::cout << _name 
 			  << " attacks with their "
-			  << this->_weapon.getType()
+			  << _weapon.getType()
 			  << std::endl;
 }

@@ -18,12 +18,9 @@ SedFile::~SedFile( void )
 	_outfile.close();
 }
 
-SedFile::SedFile(char **argv)
+SedFile::SedFile(char **argv) : _fin(argv[1]), _fout(_fin + ".replace"), _s1(argv[2]), _s2(argv[3])
 {
-	this->_fin = argv[1];       
-	this->_fout = this->_fin + ".replace";
-	this->_s1 = argv[2];
-	this->_s2 = argv[3];
+
 }
 
 void SedFile::ft_replace( void )
@@ -32,30 +29,30 @@ void SedFile::ft_replace( void )
     std::size_t found;
     std::string ptr;
 
-	this->_infile.open(this->_fin);
-	if (this->_infile.is_open())
+	_infile.open(_fin.c_str());
+	if (_infile.is_open())
 	{
-    	if (std::getline(this->_infile, s, '\0'))
+    	if (std::getline(_infile, s, '\0'))
 		{
-			this->_outfile.open(this->_fout);
-			if (this->_outfile.is_open())
+			_outfile.open(_fout.c_str());
+			if (_outfile.is_open())
 			{
-		        found = s.find(this->_s1);
+		        found = s.find(_s1);
 				ptr = "";
 		        while (found != std::string::npos)
 	    	    {    
-					ptr += s.substr( 0, found ) + this->_s2;
-					s.erase( 0, found + (this->_s1).length() );
-	            	found = s.find( this->_s1 );
+					ptr += s.substr( 0, found ) + _s2;
+					s.erase( 0, found + _s1.length() );
+	            	found = s.find( _s1 );
 	        	}
-	        	this->_outfile << ptr + s;
+	        	_outfile << ptr + s;
 	 		}
 			else
-				std::cerr << this->_fout + " cannot be created !" << std::endl;
+				std::cerr << _fout + " cannot be created !" << std::endl;
 		}
 		else
-			std::cerr << this->_fin + " is an empty file !" << std::endl;
+			std::cerr << _fin + " is an empty file !" << std::endl;
 	}
 	else
-		std::cerr << this->_fin + " cannot be opened !" << std::endl;
+		std::cerr << _fin + " cannot be opened !" << std::endl;
 }

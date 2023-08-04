@@ -12,18 +12,9 @@
 
 #include "Fixed.hpp"
 
-Fixed::Fixed( void )
+Fixed::Fixed( void ) : _fixPoint(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->_fixpoint = 0;
-}
-
- Fixed & Fixed::operator = ( const Fixed & a)
-{
-	std::cout << "Assignation operator called" << std::endl;
-	if (this != &a)
-		this->setRawBits(a.getRawBits());
-	return *this;
 }
 
 Fixed::Fixed( const Fixed & a)
@@ -40,10 +31,18 @@ Fixed::~Fixed( void )
 int Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return _fixpoint;
+	return _fixPoint;
 }
 
 void Fixed::setRawBits( int const raw )
 {
-	this->_fixpoint = raw;
+	_fixPoint = raw;
+}
+
+ Fixed & Fixed::operator =( const Fixed & a)
+{
+	std::cout << "Assignation operator called" << std::endl;
+	if (this != &a)
+		_fixPoint = a.getRawBits();
+	return *this;
 }

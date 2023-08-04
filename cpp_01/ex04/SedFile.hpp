@@ -25,10 +25,10 @@ class SedFile{
 	private:
 		std::ifstream _infile;
  		std::ofstream _outfile;
-		std::string _fin;
-		std::string _fout;
-		std::string _s1;
-		std::string _s2;
+		std::string	  _fin;
+		std::string   _fout;
+		std::string   _s1;
+		std::string   _s2;
 };
 
 #endif

@@ -33,8 +33,8 @@ class Fixed{
 		int 	toInt() const;
 	
 	private:
-		int 				_rawBits;
-		static const int	_nbBitsFracc = 8;
+		int 				_fixPoint;
+		static const int	_nbBitsFrac = 8;
 };
 
 std::ostream & operator << ( std::ostream & o, const Fixed & p );
