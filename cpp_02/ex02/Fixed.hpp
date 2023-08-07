@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:46:23 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/01 14:45:43 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/07 18:57:47 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,6 @@ class Fixed
 	    static const int    _nbBitsFrac = 8;
 };
 
-	std::ostream & operator <<( std::ostream & o, Fixed const & i );
+	std::ostream &operator <<( std::ostream &o, Fixed const &i );
 
 #endif

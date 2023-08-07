@@ -6,14 +6,14 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 14:46:47 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/01 14:46:49 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/07 19:03:02 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <cmath>
 
-Fixed::Fixed(void) : _fixPoint(0) 
+Fixed::Fixed(void) : _fixPoint( 0 ) 
 {
     // std::cout << "Default constructor called" << std::endl;
 }

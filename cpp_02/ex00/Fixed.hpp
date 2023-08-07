@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:45:21 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/01 11:57:52 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/07 19:04:33 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@
 */
 class Fixed{
 	public:
-		Fixed();
-		Fixed( const Fixed & a );
+		Fixed( void );
+		Fixed( const Fixed &a );
 		~Fixed();
-		Fixed & operator = ( const Fixed & a ); 
+		Fixed& operator =( const Fixed &a ); 
 		
-		int getRawBits() const;
+		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 
 	private:

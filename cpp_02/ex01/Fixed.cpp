@@ -6,18 +6,18 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:38:09 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/02 14:38:09 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/07 19:04:24 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed( void ) : _fixPoint(0)
+Fixed::Fixed( void ) : _fixPoint( 0 )
 {
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed( const Fixed & a )
+Fixed::Fixed( const Fixed &a )
 {
     std::cout << "Copy constructor called" << std::endl;
     *this = a;
@@ -49,7 +49,7 @@ void    Fixed::setRawBits( int const raw )
     _fixPoint = raw;
 }
 
-int		Fixed::getNbBitsFracc() const
+int		Fixed::getNbBitsFracc( void ) const
 {
 	return _nbBitsFrac;
 }
@@ -65,7 +65,7 @@ int     Fixed::toInt( void ) const
     return _fixPoint >> _nbBitsFrac;
 }
 
-Fixed & Fixed::operator =( const Fixed & a ) 
+Fixed& Fixed::operator =( const Fixed &a ) 
 {
     std::cout << "Copy assignment operator called" << std::endl;
     if ( this != &a )
@@ -73,7 +73,7 @@ Fixed & Fixed::operator =( const Fixed & a )
     return *this;
 }
 
-std::ostream & operator <<( std::ostream & o, Fixed const & p ) 
+std::ostream& operator <<( std::ostream &o, Fixed const &p ) 
 {
     o << p.toFloat();
     return o;

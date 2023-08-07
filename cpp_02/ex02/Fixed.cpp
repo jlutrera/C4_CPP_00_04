@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 14:46:47 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/01 14:46:49 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/07 19:04:07 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int     Fixed::toInt( void ) const
     return _fixPoint >> _nbBitsFrac;
 }
 
-std::ostream & operator <<( std::ostream & o, Fixed const & i ) 
+std::ostream& operator <<( std::ostream &o, Fixed const &i ) 
 {
     o << i.toFloat();
     return o;
@@ -129,7 +129,7 @@ Fixed   Fixed::operator /( const Fixed &rhs ) const
 
 //------------------ Increment/Decrement operators ------------------//
 
-Fixed&   Fixed::operator ++( void ) 
+Fixed& Fixed::operator ++( void ) 
 {
     ++this->_fixPoint;
     return *this;

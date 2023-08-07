@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 20:21:11 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/03 20:21:11 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/07 19:01:42 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ Fixed surface( Point const a, Point const b, Point const c )
 
 	if (t1 < 0)
 		t1 = t1 * (-1);
-	
 	if (t2 < 0)
 		t2 = t2 * (-1);
 	if (t3 < 0)
@@ -59,6 +58,7 @@ bool bsp( Point const a, Point const b, Point const c, Point const p)
 		std::cout << "\n\nConsequently, the point P ";
 		return false;
 	}
+
 	if (s1 == 0 || s2 == 0 || s3 == 0)
 	{
 		std::cout << "\n\nAt least one area is zero.";
@@ -66,9 +66,10 @@ bool bsp( Point const a, Point const b, Point const c, Point const p)
 		std::cout << "\n\nConsequently, P point ";
 		return false;
 	}
+	
 	std::cout << YELLOW << "\n\nAfterward, we can observe the relationship between the areas, which is ... " << RESET << std::endl;
 	std::cout << "\t\t" << st;
-	if (st == s1 + s2 + s3)
+	if (st == (s1 + s2 + s3))
 		std::cout << " = ";
 	else
 		std::cout << " < ";
