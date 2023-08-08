@@ -6,11 +6,11 @@
 class ClapTrap
 {
     public:
-        ClapTrap();
+        ClapTrap( void );
         ~ClapTrap();
-        ClapTrap(std::string name);
-        ClapTrap (ClapTrap & ct);
-        ClapTrap& operator =(ClapTrap & ct);
+        ClapTrap( std::string name );
+        ClapTrap ( ClapTrap &t );
+        ClapTrap& operator =( ClapTrap &t );
 
         std::string getName() const;
         int getHitPoints() const;
@@ -26,7 +26,6 @@ class ClapTrap
         int         _hitPoints;
         int         _energyPoints;
         int         _attackDamage;
-
 };
 
 #endif
