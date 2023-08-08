@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:44:22 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/07 19:04:40 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/08 12:38:44 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int Fixed::getRawBits( void ) const
 
 void Fixed::setRawBits( int const raw )
 {
+	std::cout << "setRawBits member function called" << std::endl;
 	_fixPoint = raw;
 }
 

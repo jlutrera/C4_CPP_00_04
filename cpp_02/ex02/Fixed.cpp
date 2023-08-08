@@ -6,37 +6,35 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 14:46:47 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/07 19:04:07 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/08 14:37:14 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <cmath>
 
 Fixed::Fixed(void) : _fixPoint( 0 ) 
 {
-    // std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed( const int n ) : _fixPoint( n << _nbBitsFrac ) 
 {
-    // std::cout << "Int constructor called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed( const float n ) : _fixPoint( roundf( n * ( 1 << _nbBitsFrac ) ) ) 
 {
-    // std::cout << "Float constructor called" << std::endl;
+	std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed( const Fixed &rhs ) 
 {
-    // std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
     *this = rhs;
 }
 
 Fixed& Fixed::operator =( const Fixed &rhs ) 
 {
-    // std::cout << "Copy assignment operator called" << std::endl;
     if ( this != &rhs )
         _fixPoint = rhs.getRawBits();
     return *this;
@@ -44,7 +42,7 @@ Fixed& Fixed::operator =( const Fixed &rhs )
 
 Fixed::~Fixed() 
 {
-    // std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits( void ) const 
@@ -59,12 +57,12 @@ void    Fixed::setRawBits( int const raw )
 
 float   Fixed::toFloat( void ) const 
 {
-    return static_cast<float> (_fixPoint ) / ( 1 << _nbBitsFrac );
+    return static_cast<float>(_fixPoint ) / ( 1 << _nbBitsFrac );
 }
 
 int     Fixed::toInt( void ) const 
 {
-    return _fixPoint >> _nbBitsFrac;
+    return _fixPoint / ( 1 << _nbBitsFrac );
 }
 
 std::ostream& operator <<( std::ostream &o, Fixed const &i ) 

@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:38:09 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/07 19:04:24 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/08 13:30:30 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,8 @@ int Fixed::getRawBits( void ) const
 
 void    Fixed::setRawBits( int const raw ) 
 {
+	std::cout << "setRawBits member function called" << std::endl;
     _fixPoint = raw;
-}
-
-int		Fixed::getNbBitsFracc( void ) const
-{
-	return _nbBitsFrac;
 }
 
 float   Fixed::toFloat( void ) const 
@@ -61,8 +57,7 @@ float   Fixed::toFloat( void ) const
 
 int     Fixed::toInt( void ) const 
 {
-	//Para convertir a un número entero, se debe mover el punto a su extremo derecho.
-    return _fixPoint >> _nbBitsFrac;
+	return _fixPoint / ( 1 << _nbBitsFrac );
 }
 
 Fixed& Fixed::operator =( const Fixed &a ) 
@@ -75,6 +70,6 @@ Fixed& Fixed::operator =( const Fixed &a )
 
 std::ostream& operator <<( std::ostream &o, Fixed const &p ) 
 {
-    o << p.toFloat();
+	o << p.toFloat();
     return o;
 }

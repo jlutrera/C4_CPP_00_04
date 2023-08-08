@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:46:23 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/07 19:04:19 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/08 13:36:39 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,15 @@ class Fixed{
 		~Fixed();
 		Fixed& operator =( const Fixed &a );
 		
-		
 		int 	getRawBits( void ) const;
 		void	setRawBits( int const raw );
-		int		getNbBitsFracc( void ) const;
+
+	    /*
+        To convert a floating point to a fixed point we multiply the float number
+        with the base raised to the power of n (n the size of the fractional part).
+        To do the opposite we devide.
+    	*/
+
 		float 	toFloat( void ) const;
 		int 	toInt( void ) const;
 	
@@ -37,6 +42,6 @@ class Fixed{
 		static const int	_nbBitsFrac = 8;
 };
 
-std::ostream& operator << ( std::ostream &o, const Fixed &p );
+std::ostream& operator <<( std::ostream &o, const Fixed &p );
 
 #endif

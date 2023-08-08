@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 18:59:51 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/07 19:03:48 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:00:00 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Point::~Point()
 
 }
 
-Point::Point( float const a, float const b) : _x( a ), _y( b )
+Point::Point( float const x, float const y) : _x( x ), _y( y )
 {
 
 }
@@ -46,8 +46,8 @@ Point& Point::operator =( Point const &p )
 {
 	if (this != &p)
 	{
-		( Fixed ) _x = p.getX();
-		( Fixed ) _y = p.getY();
+		static_cast<Fixed>(_x) = p.getX();
+		static_cast<Fixed>(_y) = p.getY();
 	}
 	return *this;
 }

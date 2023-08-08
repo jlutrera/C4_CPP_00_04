@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 19:38:29 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/07 19:03:21 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:00:10 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Point
 		Point( void );
 		Point( Point const &p);
 		~Point();
-		Point( const float a, const float b);
+		Point( const float x, const float y);
 		Point& operator =( Point const &p);
 		Fixed getX() const;
 		Fixed getY() const;

@@ -1,4 +1,4 @@
-NAME	= 	fixpoint
+NAME	= 	bsp
 #Flags
 CC		= 	c++
 CFLAGS	= 	-Wall -Wextra -Werror -std=c++98
