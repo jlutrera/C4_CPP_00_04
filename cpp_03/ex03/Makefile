@@ -1,7 +1,7 @@
 NAME	= 	traps
 #Flags
 CC		= 	c++
-CFLAGS	= 	-Wshadow -Wall -Wextra -Werror -std=c++98
+CFLAGS	= 	-Wall -Wextra -Werror -std=c++98 -Wshadow
 RM		= 	rm -rf
 
 #Files
