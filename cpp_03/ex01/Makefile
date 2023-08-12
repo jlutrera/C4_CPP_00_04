@@ -5,8 +5,8 @@ CFLAGS	= 	-Wall -Wextra -Werror -std=c++98
 RM		= 	rm -rf
 
 #Files
-SRC		=	ClapTrap.cpp main.cpp
-HEADER	=	ClapTrap.hpp
+SRC		=	ClapTrap.cpp ScavTrap.cpp main.cpp
+HEADER	=	ClapTrap.hpp ScavTrap.hpp
 OBJ		= 	$(SRC:.cpp=.o)
 
 #Colors:
