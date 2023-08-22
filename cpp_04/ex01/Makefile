@@ -1,11 +1,12 @@
-NAME	= 	canonical
+NAME	= 	animals
 #Flags
 CC		= 	c++
-CFLAGS	= 	-Wall -Wextra -Werror -std=c++98
+CFLAGS	= 	-Wall -Wextra -Werror -std=c++98 -fsanitize=address
 RM		= 	rm -rf
 
 #Files
-SRC		=	Fixed.cpp main.cpp
+SRC		=	Animal.cpp Dog.cpp Cat.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
+HEADER	=	Animal.hpp Dog.hpp Cat.hpp Brain.hpp WrongAnimal.hpp WrongCat.hpp
 OBJ		= 	$(SRC:.cpp=.o)
 
 #Colors:
@@ -18,7 +19,7 @@ CURSIVE	=	\e[33;3m
 #Rules
 all		: 	$(NAME)
 
-%.o		:	%.cpp
+%.o		:	%.cpp $(HEADER)
 			printf "$(CURSIVE)$(GRAY) 	- Compiling $@... $(RESET)\n"
 			$(CC) $(CFLAGS) -c $< -o $@
 
