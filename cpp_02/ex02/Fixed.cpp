@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 14:46:47 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/08 14:37:14 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/23 13:36:04 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 Fixed::Fixed(void) : _fixPoint( 0 ) 
 {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed( const int n ) : _fixPoint( n << _nbBitsFrac ) 
 {
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed( const float n ) : _fixPoint( roundf( n * ( 1 << _nbBitsFrac ) ) ) 
 {
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed( const Fixed &rhs ) 
 {
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
     *this = rhs;
 }
 
@@ -42,7 +42,7 @@ Fixed& Fixed::operator =( const Fixed &rhs )
 
 Fixed::~Fixed() 
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits( void ) const 

@@ -38,7 +38,7 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "DiamondTrap " << _name << ": Default destructor called." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& other) : ClapTrap(other), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(const DiamondTrap& other) : ClapTrap(other), ScavTrap(other), FragTrap(other)
 {
 	std::cout << other._nameClass << ": Copy constructor called." << std::endl;
 }

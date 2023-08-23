@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:45:35 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/07/06 13:45:36 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/23 13:25:22 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main( void )
 	Fixed a;
 	Fixed b( a );
 	Fixed c;
-	a.setRawBits(6);
+	
 	c = b;
 
 	std::cout << a.getRawBits() << std::endl;
