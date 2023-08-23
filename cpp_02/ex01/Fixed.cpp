@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:38:09 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/08 13:30:30 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/23 14:15:32 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ Fixed::Fixed( void ) : _fixPoint( 0 )
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed( const Fixed &a )
+Fixed::Fixed( const Fixed &a ) : _fixPoint(a._fixPoint)
 {
     std::cout << "Copy constructor called" << std::endl;
-    *this = a;
 }
 
 Fixed::~Fixed() 

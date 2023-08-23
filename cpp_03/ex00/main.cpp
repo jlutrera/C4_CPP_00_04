@@ -24,6 +24,7 @@ int main()
 	ClapTrap john("John");
 	ClapTrap jim("Jim");
 	ClapTrap joe("Joe");
+	ClapTrap isabela( john );
 
 	ft_printPoints(john.getNameClass(), john.getEnergyPoints(), john.getHitPoints(), john.getAttackDamage());
 	john.attack("Marge");
@@ -41,6 +42,8 @@ int main()
 	joe.beRepaired(10);
 	joe.takeDamage(19);
 	ft_printPoints(joe.getNameClass(), joe.getEnergyPoints(), joe.getHitPoints(), joe.getAttackDamage());
+
+	ft_printPoints(isabela.getNameClass(), isabela.getEnergyPoints(), isabela.getHitPoints(), isabela.getAttackDamage());
 
 	return 0;
 }

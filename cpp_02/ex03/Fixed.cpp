@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 14:46:47 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/08 14:44:51 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/23 14:16:35 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ Fixed::Fixed( const float n ) : _fixPoint( roundf( n * ( 1 << _nbBitsFrac ) ) )
 
 }
 
-Fixed::Fixed( const Fixed &rhs ) 
+Fixed::Fixed( const Fixed &rhs )  : _fixPoint(rhs._fixPoint)
 {
-    *this = rhs;
+
 }
 
 Fixed& Fixed::operator =( const Fixed &rhs ) 
