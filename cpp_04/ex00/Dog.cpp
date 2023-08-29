@@ -24,11 +24,12 @@ Dog::~Dog()
 
 Dog::Dog(const Dog &other) : Animal(other)
 {
-	*this = other;
+	std::cout << "Dog : Copy constructor called." << std::endl;
 }
 
 Dog& Dog::operator=(const Dog &other)
 {
+	std::cout << "Dog : Overload operator = called." << std::endl;
 	Animal::operator=(other);
 	return *this;
 }

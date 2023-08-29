@@ -12,6 +12,9 @@
 
 #include "ClapTrap.hpp"
 
+const std::string YELLOW 	= "\033[33m";
+const std::string RESET 	= "\033[0m";
+
 static void ft_printPoints( std::string name, int e, int h, int d)
 {
 	std::cout << name << " has " << e << " energy points, "
@@ -21,11 +24,14 @@ static void ft_printPoints( std::string name, int e, int h, int d)
 
 int main()
 {
+	std::cout << std::endl;
+	std::cout << YELLOW + "Creamos los objetos de la clase" + RESET << std::endl;
 	ClapTrap john("John");
-	ClapTrap jim("Jim");
-	ClapTrap joe("Joe");
-	ClapTrap isabela( john );
+	ClapTrap jim;
+	ClapTrap joe(john);
 
+	std::cout << std::endl;
+	std::cout << YELLOW + "Probamos el objeto <jhon> de la clase <ClapTrap>" + RESET << std::endl;
 	ft_printPoints(john.getNameClass(), john.getEnergyPoints(), john.getHitPoints(), john.getAttackDamage());
 	john.attack("Marge");
 	john.attack("Bart");
@@ -33,17 +39,22 @@ int main()
 	john.takeDamage(5);
 	ft_printPoints(john.getNameClass(), john.getEnergyPoints(), john.getHitPoints(), john.getAttackDamage());
 	
+	std::cout << std::endl;
+	std::cout << YELLOW + "Probamos el objeto <jim>, que es igual a <john>,  de la clase <ClapTrap>" + RESET << std::endl;
+	jim = john;
 	ft_printPoints(jim.getNameClass(), jim.getEnergyPoints(), jim.getHitPoints(), jim.getAttackDamage());
-	jim.takeDamage(9);
+	jim.attack("Peter");
 	jim.takeDamage(10);
 	ft_printPoints(jim.getNameClass(), jim.getEnergyPoints(), jim.getHitPoints(), jim.getAttackDamage());
 	
+	std::cout << std::endl;
+	std::cout << YELLOW + "Probamos el objeto <joe>, que es copia de <john>, de la clase <ClapTrap>" + RESET << std::endl;
 	ft_printPoints(joe.getNameClass(), joe.getEnergyPoints(), joe.getHitPoints(), joe.getAttackDamage());
 	joe.beRepaired(10);
 	joe.takeDamage(19);
-	ft_printPoints(joe.getNameClass(), joe.getEnergyPoints(), joe.getHitPoints(), joe.getAttackDamage());
+	ft_printPoints(joe.getNameClass(), joe.getEnergyPoints(), joe.getHitPoints(), joe.getAttackDamage());	
 
-	ft_printPoints(isabela.getNameClass(), isabela.getEnergyPoints(), isabela.getHitPoints(), isabela.getAttackDamage());
-
+	std::cout << std::endl;
+	std::cout << YELLOW + "Destruimos los objetos de la clase" + RESET << std::endl;
 	return 0;
 }

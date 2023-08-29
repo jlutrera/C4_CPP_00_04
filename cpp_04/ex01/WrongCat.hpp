@@ -24,6 +24,9 @@ class WrongCat : public WrongAnimal
 		WrongCat& operator=(const WrongCat& other);
 
 		void makeSound( void ) const;
+		std::string getBrain(int i) const;
+		void setBrain(int i, std::string str);
+	
 	private:
 		Brain* _brain;
 };

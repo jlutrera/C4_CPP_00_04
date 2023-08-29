@@ -24,17 +24,18 @@ Cat::~Cat()
 	delete _brain;
 }
 
-Cat::Cat(const Cat &other) : Animal( other )
+Cat::Cat(const Cat &other) : Animal( other ), _brain(new Brain(*other._brain))
 {
-	*this = other;
+	std::cout << "Cat : Copy constructor called" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat &other)
 {
+	std::cout << "Cat : Overload operator = called." << std::endl;
 	if (this != &other)
 	{
 		_type = other._type;
-		_brain = new Brain(* other._brain);
+		*_brain = *other._brain;
 	}
 	return *this;
 }
@@ -44,7 +45,12 @@ void Cat::makeSound( void ) const
 	std::cout << "Meow Meow !!" << std::endl;
 }
 
-std::string Cat::getBrain() const
+std::string Cat::getBrain(int i) const
 {
-	return _brain->getBrain();
+	return _brain->getBrain(i);
+}
+
+void Cat::setBrain(int i, std::string str)
+{
+	_brain->setBrain(i, str);
 }

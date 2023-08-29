@@ -23,7 +23,7 @@ ScavTrap::ScavTrap( void ) : ClapTrap()
 
 ScavTrap::ScavTrap( std::string name) : ClapTrap( name )
 {
-	std::cout << "ScavTrap " << _name << ": Name constructor called." << std::endl;
+	std::cout << "ScavTrap " << name << ": Name constructor called." << std::endl;
 	_nameClass = "ScavTrap " + name;
 	_hitPoints = 100;
 	_energyPoints = 50;
@@ -52,7 +52,7 @@ void ScavTrap::guardGate( void )
 	std::cout << _nameClass << " is now in Gate keeper mode." << std::endl;  
 }
 
-void ScavTrap::attack( std::string const &target )
+void ScavTrap::attack( const std::string &target )
 {
 	std::cout << "(This is HORRIBLE !!!!) ";
 	ClapTrap::attack(target);

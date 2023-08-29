@@ -27,16 +27,16 @@ AAnimal::~AAnimal()
 	std::cout << "AAnimal (" << _type << ") : Destructor called." << std::endl;
 }
 
-AAnimal::AAnimal(const AAnimal &other)
+AAnimal::AAnimal(const AAnimal &other) : _type(other.getType())
 {
-	*this = other;
+	std::cout << "AAnimal (" << _type << ") : Copy constructor called." << std::endl;
 }
 
 AAnimal& AAnimal::operator=(const AAnimal& other)
 {
 	std::cout << "AAnimal : Overload operator = called." << std::endl;
 	if ( this != &other )
-		_type = other._type;
+		_type = other.getType();
 	return *this;
 }
 

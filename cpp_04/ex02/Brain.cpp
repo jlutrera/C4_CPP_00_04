@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 17:32:03 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/16 17:32:03 by jutrera-         ###   ########.fr       */
+/*   Created: 2023/08/16 17:30:40 by jutrera-          #+#    #+#             */
+/*   Updated: 2023/08/16 17:30:40 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 Brain::Brain()
 {
-	std::cout << "Brain : Default constructor called." << std::endl;
-	_ideas[0] = "my first idea";
+	std::cout << "Brain : Default constructor called" << std::endl;
 }
 
 Brain::~Brain()
@@ -25,21 +24,24 @@ Brain::~Brain()
 
 Brain::Brain(const Brain &other)
 {
-	*this = other;
+	std::cout << "Brain : Copy constructor called" << std::endl;
+	*_ideas = *(other._ideas);
 }
 
 Brain& Brain::operator=(const Brain &other)
 {
 	std::cout << "Brain : Overload operator = called." << std::endl;
 	if (this != &other)
-	{
-		for (int i = 0; i < 100; i++)
-			_ideas[i] = other._ideas[i];
-	}
+		*_ideas = *(other._ideas);
 	return *this;
 }
 
-std::string Brain::getBrain() const
+std::string Brain::getBrain(int i) const
 {
-	return _ideas[0];
+	return _ideas[i];
+}
+
+void  Brain::setBrain(int i, std::string str)
+{
+	_ideas[i] = str;
 }

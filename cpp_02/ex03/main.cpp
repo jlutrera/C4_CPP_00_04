@@ -6,11 +6,16 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 13:48:41 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/01 14:48:04 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/29 11:14:09 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
+
+const std::string RESET 	= "\033[0m";
+const std::string RED 		= "\033[31m";
+const std::string GREEN 	= "\033[32m";
+const std::string YELLOW 	= "\033[33m";
 
 Point  ft_asking_points(char c)
 {

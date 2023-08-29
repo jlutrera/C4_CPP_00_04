@@ -24,17 +24,18 @@ Dog::~Dog()
 	delete _brain;
 }
 
-Dog::Dog(const Dog &other) : Animal(other)
+Dog::Dog(const Dog &other) : Animal(other), _brain(new Brain(*other._brain))
 {
-	*this = other;
+	std::cout << "Dog : Copy constructor called" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog &other)
 {
+	std::cout << "Dog : Overload operator = called." << std::endl;
 	if (this != &other)
 	{
 		_type = other._type;
-		_brain = new Brain( *other._brain );
+		*_brain = *other._brain;
 	}
 	return *this;
 }
@@ -44,7 +45,12 @@ void Dog::makeSound( void ) const
 	std::cout << "Woof Woof !!" << std::endl;
 }
 
-std::string Dog::getBrain() const
+std::string Dog::getBrain(int i) const
 {
-	return _brain->getBrain();
+	return _brain->getBrain(i);
+}
+
+void Dog::setBrain(int i, std::string str)
+{
+	_brain->setBrain(i, str);
 }

@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap( void ) : ClapTrap()
 {
-	std::cout << "FragTrap " << _name << ": Default constructor called." << std::endl;
+	std::cout << "FragTrap " << this->_name << ": Default constructor called." << std::endl;
 	_nameClass = "FragTrap Noname";
 	_hitPoints = 100;
 	_energyPoints = 100;
@@ -23,7 +23,7 @@ FragTrap::FragTrap( void ) : ClapTrap()
 
 FragTrap::FragTrap( std::string name) : ClapTrap( name )
 {
-	std::cout << "FragTrap " << _name << ": Name constructor called." << std::endl;
+	std::cout << "FragTrap " << this->_name << ": Name constructor called." << std::endl;
 	_nameClass = "FragTrap " + name;
 	_hitPoints = 100;
 	_energyPoints = 100;
@@ -32,7 +32,7 @@ FragTrap::FragTrap( std::string name) : ClapTrap( name )
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap " << _name << ": Destructor called." << std::endl;
+	std::cout << "FragTrap " << this->_name << ": Destructor called." << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)

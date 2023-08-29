@@ -24,11 +24,12 @@ Cat::~Cat()
 
 Cat::Cat(const Cat &other) : Animal( other )
 {
-	*this = other;
+	std::cout << "Cat : Copy constructor called." << std::endl;
 }
 
 Cat& Cat::operator=(const Cat &other)
 {
+	std::cout << "Cat : Overload operator = called." << std::endl;
 	Animal::operator=(other);
 	return *this;
 }

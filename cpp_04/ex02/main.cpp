@@ -70,39 +70,55 @@ The order of constructor and destructor:
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
+const std::string YELLOW 	= "\033[33m";
+const std::string GREEN 	= "\033[32m";
+const std::string RESET 	= "\033[0m";
+
 int main()
 {
+	//AAnimal ejemplo;   is not allowed !!!
+	std::cout << std::endl;
+	std::cout << GREEN + "*** FIRST TEST ***" + RESET << std::endl;
+	std::cout << YELLOW + "Creating animals with brains" + RESET << std::endl;
 	const AAnimal* j = new Dog();
     const AAnimal* i = new Cat();
-
-    delete j;//should not create a leak
+	std::cout << YELLOW + "Deleting animals and its brains" + RESET << std::endl;
+    delete j;
     delete i;
 
-    Dog basic;
-    {
-        Dog tmp = basic;
-    }
-
+	std::cout << std::endl;
+	std::cout << GREEN + "*** SECOND TEST ***" + RESET << std::endl;	
+	std::cout << YELLOW + "Creating an array of 4 animals with brains" + RESET << std::endl;
     const AAnimal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
-    for ( int i = 0; i < 4; i++ )
-        delete animals[i];
-		
-	const Dog k;
-	const Dog tmp = k;
-	const Dog tmp2(k);
+	std::cout << YELLOW + "Deleting animals and its brains" + RESET << std::endl;
+    for ( int n = 0; n < 4; n++ )
+	{
+        delete animals[n];
+	}
+
+	std::cout << std::endl;
+	std::cout << GREEN + "*** THIRD TEST ***" + RESET << std::endl;	
+	std::cout << YELLOW + "Creating a Dog and using overload = and copy constructor" + RESET << std::endl;
+	Dog dog1;
+	dog1.setBrain(0, "mi primera idea");
+	Dog dog2;
+	Dog dog3(dog1);
+	dog2 = dog1;
+	dog2.setBrain(0, "tengo ideas propias");
+	std::cout << "dog1 : type(" << dog1.getType() << ")   brain(" << dog1.getBrain(0) << ")" << std::endl; 
+	std::cout << "dog2 : type(" << dog2.getType() << ")   brain(" << dog2.getBrain(0) << ")" << std::endl; 
+	std::cout << "dog3 : type(" << dog3.getType() << ")   brain(" << dog3.getBrain(0) << ")" << std::endl; 
 	
-	std::cout << "k : type(" << k.getType() << ")   brain(" << k.getBrain() << ")" << std::endl; 
-	std::cout << "tmp : type(" << tmp.getType() << ")   brain(" << tmp.getBrain() << ")" << std::endl; 
-	std::cout << "tmp2 : type(" << tmp2.getType() << ")   brain(" << tmp2.getBrain() << ")" << std::endl; 
-	
-	const Cat k3;
-	const Cat tmp3= k3;
-	const Cat tmp23(k3);
-	
-	
-	std::cout << "k3 : type(" << k3.getType() << ")   brain(" << k3.getBrain() << ")" << std::endl; 
-	std::cout << "tmp3 : type(" << tmp3.getType() << ")   brain(" << tmp3.getBrain() << ")" << std::endl; 
-	std::cout << "tmp23 : type(" << tmp23.getType() << ")   brain(" << tmp23.getBrain() << ")" << std::endl; 
+	std::cout << YELLOW + "Creating a Dog and using overload = and copy constructor" + RESET << std::endl;
+	Cat cat1;
+	cat1.setBrain(0, "my first idea");
+	Cat cat2;
+	Cat cat3(cat1);
+	cat2 = cat1;
+	std::cout << "cat1 : type(" << cat1.getType() << ")   brain(" << cat1.getBrain(0) << ")" << std::endl; 
+	std::cout << "cat2 : type(" << cat2.getType() << ")   brain(" << cat2.getBrain(0) << ")" << std::endl; 
+	std::cout << "cat3 : type(" << cat3.getType() << ")   brain(" << cat3.getBrain(0) << ")" << std::endl; 	
+	std::cout << YELLOW + "Deleting cats and dogs and its brains" + RESET << std::endl;
 
 	return 0;
 }

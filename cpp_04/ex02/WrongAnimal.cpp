@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 17:36:06 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/16 17:36:06 by jutrera-         ###   ########.fr       */
+/*   Created: 2023/08/16 17:31:16 by jutrera-          #+#    #+#             */
+/*   Updated: 2023/08/16 17:31:16 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ WrongAnimal::~WrongAnimal()
 	std::cout << "WrongAnimal (" << _type << ") : Destructor called." << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &other)
+WrongAnimal::WrongAnimal(const WrongAnimal &other) : _type(other.getType())
 {
-	*this = other;
+	std::cout << "WrongAnimal (" << _type << ") : Copy constructor called." << std::endl;
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other)
 {
+	std::cout << "WrongAnimal : Overload operator = called." << std::endl;
 	if ( this != &other )
 		_type = other._type;
 	return *this;

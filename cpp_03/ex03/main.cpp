@@ -12,6 +12,9 @@
 
 #include "DiamondTrap.hpp"
 
+const std::string YELLOW 	= "\033[33m";
+const std::string RESET 	= "\033[0m";
+
 static void ft_printPoints( std::string nameclass, int e, int h, int d)
 {
 	std::cout << nameclass << " has " << e << " energy points, "
@@ -21,50 +24,14 @@ static void ft_printPoints( std::string nameclass, int e, int h, int d)
 
 int main()
 {
-	ClapTrap john("John");
-	ClapTrap jim("Jim");
-	ClapTrap joe("Joe");
-	ScavTrap jane("Jane");
-	FragTrap joseph("Joseph");
+	std::cout << std::endl;
+	std::cout << YELLOW + "Creamos los objetos de la clase" + RESET << std::endl;
 	DiamondTrap daniel("Daniel");
+	DiamondTrap mary;
+	DiamondTrap peter(daniel);
 	
-	std::cout << "\n" << std::endl;
-	ft_printPoints(john.getNameClass(), john.getEnergyPoints(), john.getHitPoints(), john.getAttackDamage());
-	john.attack("Marge");
-	john.attack("Bart");
-	john.attack("Homer");
-	john.takeDamage(5);
-	ft_printPoints(john.getNameClass(), john.getEnergyPoints(), john.getHitPoints(), john.getAttackDamage());
-	std::cout << "\n" << std::endl;
-
-	ft_printPoints(jim.getNameClass(), jim.getEnergyPoints(), jim.getHitPoints(), jim.getAttackDamage());
-	jim.takeDamage(9);
-	jim.takeDamage(10);
-	ft_printPoints(jim.getNameClass(), jim.getEnergyPoints(), jim.getHitPoints(), jim.getAttackDamage());
-	std::cout << "\n" << std::endl;
-
-	ft_printPoints(joe.getNameClass(), joe.getEnergyPoints(), joe.getHitPoints(), joe.getAttackDamage());
-	joe.beRepaired(10);
-	joe.takeDamage(19);
-	ft_printPoints(joe.getNameClass(), joe.getEnergyPoints(), joe.getHitPoints(), joe.getAttackDamage());
-	std::cout << "\n" << std::endl;
-
-	ft_printPoints(jane.getNameClass(), jane.getEnergyPoints(), jane.getHitPoints(), jane.getAttackDamage());
-	jane.attack("Lisa");
-	jane.takeDamage(99);
-	jane.beRepaired(50);
-	jane.guardGate();
-	ft_printPoints(jane.getNameClass(), jane.getEnergyPoints(), jane.getHitPoints(), jane.getAttackDamage());
-	std::cout << "\n" << std::endl;
-
-	ft_printPoints(joseph.getNameClass(), joseph.getEnergyPoints(), joseph.getHitPoints(), joseph.getAttackDamage());
-	joseph.attack("Maggie");
-	joseph.takeDamage(99);
-	joseph.beRepaired(50);
-	joseph.highFivesGuys();
-	ft_printPoints(joseph.getNameClass(), joseph.getEnergyPoints(), joseph.getHitPoints(), joseph.getAttackDamage());
-	std::cout << "\n" << std::endl;
-
+	std::cout << std::endl;
+	std::cout << YELLOW + "Probamos el objeto <daniel> de la clase <DiamondTrap>" + RESET << std::endl;
 	ft_printPoints(daniel.getNameClass(), daniel.getEnergyPoints(), daniel.getHitPoints(), daniel.getAttackDamage());
 	daniel.attack("Ned");
 	daniel.takeDamage(5);
@@ -73,7 +40,43 @@ int main()
 	daniel.highFivesGuys();
 	daniel.whoAmI();
 	ft_printPoints(daniel.getNameClass(), daniel.getEnergyPoints(), daniel.getHitPoints(), daniel.getAttackDamage());
-	std::cout << "\n" << std::endl;
 	
+	std::cout << std::endl;
+	std::cout << YELLOW + "Probamos el objeto <mary> de la clase <DiamondTrap>" + RESET << std::endl;
+	std::cout << YELLOW + "    Antes de igualarlo a <daniel>" + RESET << std::endl;
+	ft_printPoints(mary.getNameClass(), mary.getEnergyPoints(), mary.getHitPoints(), mary.getAttackDamage());
+	mary.attack("Ned");
+	mary.takeDamage(1);
+	mary.beRepaired(1);
+	mary.guardGate();
+	mary.highFivesGuys();
+	mary.whoAmI();
+	ft_printPoints(mary.getNameClass(), mary.getEnergyPoints(), mary.getHitPoints(), mary.getAttackDamage());
+	
+	mary = daniel;
+	std::cout << YELLOW + "    Despues de igualarlo a <daniel>" + RESET << std::endl;
+	ft_printPoints(mary.getNameClass(), mary.getEnergyPoints(), mary.getHitPoints(), mary.getAttackDamage());
+	mary.attack("Ned");
+	mary.takeDamage(5);
+	mary.beRepaired(3);
+	mary.guardGate();
+	mary.highFivesGuys();
+	mary.whoAmI();
+	ft_printPoints(mary.getNameClass(), mary.getEnergyPoints(), mary.getHitPoints(), mary.getAttackDamage());
+
+	std::cout << std::endl;
+	std::cout << YELLOW + "Probamos el objeto <peter> ( copia de <daniel> ) de la clase <DiamondTrap>" + RESET << std::endl;
+	ft_printPoints(peter.getNameClass(), peter.getEnergyPoints(), peter.getHitPoints(), peter.getAttackDamage());
+	peter.attack("Ned");
+	peter.takeDamage(8);
+	peter.beRepaired(5);
+	peter.guardGate();
+	peter.highFivesGuys();
+	peter.whoAmI();
+	ft_printPoints(peter.getNameClass(), peter.getEnergyPoints(), peter.getHitPoints(), peter.getAttackDamage());
+
+	std::cout << std::endl;
+	std::cout << YELLOW + "Destruimos los objetos de la clase" + RESET << std::endl;
+
 	return 0;
 }

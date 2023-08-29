@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 21:00:37 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/23 13:55:51 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/28 14:18:12 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap( std::string name ) : _name( name ), _nameClass( "ClapTrap " 
 	std::cout << "ClapTrap " << _name << ": Name constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap ( const ClapTrap &t ) : _name(t._name), _nameClass(t._nameClass), _hitPoints(t._hitPoints), _energyPoints(t._energyPoints), _attackDamage(t._attackDamage)
+ClapTrap::ClapTrap ( const ClapTrap &t ) : _name(t.getName()), _nameClass(t.getNameClass()), _hitPoints(t.getHitPoints()), _energyPoints(t.getEnergyPoints()), _attackDamage(t.getAttackDamage())
 {
     std::cout << "ClapTrap " << t._name << ": Copy constructor called" << std::endl;
 }
@@ -45,7 +45,7 @@ ClapTrap& ClapTrap::operator =( const ClapTrap &t )
 	return *this;
 }
 
-void ClapTrap::attack( std::string const &target )
+void ClapTrap::attack( const std::string &target )
 {
 	std::cout << _nameClass;
 	if (_hitPoints == 0)

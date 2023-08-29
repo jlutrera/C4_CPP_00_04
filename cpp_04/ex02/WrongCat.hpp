@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 17:36:28 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/16 17:36:28 by jutrera-         ###   ########.fr       */
+/*   Created: 2023/08/16 17:31:33 by jutrera-          #+#    #+#             */
+/*   Updated: 2023/08/16 17:31:33 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class WrongCat : public WrongAnimal
 		WrongCat& operator=(const WrongCat& other);
 
 		void makeSound( void ) const;
+		std::string getBrain(int i) const;
+		void setBrain(int i, std::string str);
+	
 	private:
 		Brain* _brain;
 };

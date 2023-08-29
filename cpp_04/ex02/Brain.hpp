@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 17:32:08 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/16 17:32:08 by jutrera-         ###   ########.fr       */
+/*   Created: 2023/08/16 17:30:45 by jutrera-          #+#    #+#             */
+/*   Updated: 2023/08/16 17:30:45 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ class Brain
 		Brain(const Brain &other);
 		Brain& operator=(const Brain &other);
 
-		std::string getBrain() const;
+		std::string getBrain(int i) const;
+		void setBrain(int i, std::string str);
 
 	protected:
 		std::string _ideas[100];

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 17:36:13 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/16 17:36:13 by jutrera-         ###   ########.fr       */
+/*   Created: 2023/08/16 17:31:21 by jutrera-          #+#    #+#             */
+/*   Updated: 2023/08/16 17:31:21 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class WrongAnimal
 		WrongAnimal(const WrongAnimal &other);
 		WrongAnimal& operator=(const WrongAnimal& other);
 		std::string getType() const;
-		//Falta "virtual" así que no va a funcionar		
+	
 		~WrongAnimal();
 		void makeSound( void ) const;
 

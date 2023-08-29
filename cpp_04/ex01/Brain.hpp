@@ -23,7 +23,8 @@ class Brain
 		Brain(const Brain &other);
 		Brain& operator=(const Brain &other);
 
-		std::string getBrain() const;
+		std::string getBrain(int i) const;
+		void setBrain(int i, std::string str);
 
 	protected:
 		std::string _ideas[100];
