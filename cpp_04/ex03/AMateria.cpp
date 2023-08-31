@@ -27,24 +27,16 @@ AMateria::AMateria() : _type("")
 
 }
 
-AMateria::~AMateria()
+AMateria::AMateria(const AMateria & hrs) : _type(hrs.getType())
 {
 
-}
-
-AMateria::AMateria(const AMateria & hrs) : AMateria()
-{
-	*this = hrs;
 }
 
 AMateria& AMateria::operator=(const AMateria& hrs)
 {
-	
-}
-
-AMateria* AMateria::clone() const
-{
-
+	if (this != &hrs)
+		_type = hrs.getType();
+	return *this;
 }
 
 void AMateria::use(ICharacter &target)

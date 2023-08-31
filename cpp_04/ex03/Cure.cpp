@@ -12,29 +12,27 @@
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("cure")
-{
+Cure::Cure() : AMateria("cure") {}
 
-}
-
-Cure::~Cure()
-{
-	
-}
+Cure::~Cure() {}
 
 Cure::Cure(const Cure& hrs)
 {
-
+	_type = "cure";
 }
 
 Cure& Cure::operator=(const Cure& hrs)
 {
-
+	/*this does not make sense
+	if (this != &hrs)
+		_type = hrs.getType();
+	*/
+	return *this;
 }
 
 AMateria* Cure::clone() const
 {
-
+	return &Cure();
 }
 
 void Cure::use(ICharacter& target)

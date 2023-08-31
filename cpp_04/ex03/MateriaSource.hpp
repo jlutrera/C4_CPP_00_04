@@ -13,7 +13,6 @@
 #ifndef MATERIASOURCE_HPP
 #  define MATERIASOURCE_HPP
 
-#  include <iostream>
 #  include "IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource
@@ -23,9 +22,12 @@ class MateriaSource : public IMateriaSource
 		~MateriaSource();
 		MateriaSource& operator=(const MateriaSource & hrs);
 		MateriaSource(const MateriaSource & hrs);
-		
+
 		void learnMateria(AMateria*);
 		AMateria* createMateria(std::string const & type);
+
+	private:
+
 };
 
 #endif

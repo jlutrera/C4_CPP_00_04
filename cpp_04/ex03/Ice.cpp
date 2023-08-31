@@ -12,24 +12,22 @@
 
 #include "Ice.hpp"
 
-Ice::Ice() : AMateria("ice")
-{
+Ice::Ice() : AMateria("ice") {}
 
-}
-
-Ice::~Ice()
-{
-
-}
+Ice::~Ice() {}
 
 Ice& Ice::operator=(const Ice &hrs)
 {
-
+	/*This does not make sense
+	if (this != &hrs)
+		_type = hrs.getType();
+	*/
+	return *this;
 }
 
 Ice::Ice(const Ice & hrs)
 {
-	*this = hrs;
+	_type = "ice";
 }
 
 AMateria* Ice::clone() const
