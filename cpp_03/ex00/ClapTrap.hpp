@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 21:00:31 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/29 11:11:44 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/31 10:38:24 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class ClapTrap
         ~ClapTrap();
         ClapTrap( std::string name );
         ClapTrap ( const ClapTrap &t );
-        ClapTrap& operator =( const ClapTrap &t );
+        ClapTrap& operator=( const ClapTrap &t );
 
         std::string getName() const;
 		std::string getNameClass() const;

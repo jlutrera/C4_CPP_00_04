@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 23:06:34 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/10 23:06:34 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/31 11:47:55 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,15 @@ ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
 {
-	ClapTrap::operator=(rhs);
+	std::cout << "ScavTrap " << rhs._name << ": Assignation operator called" << std::endl;
+	if (this != &rhs)
+	{
+		_name = rhs._name;
+		_nameClass = rhs._nameClass;
+	    _hitPoints = rhs._hitPoints;
+	    _energyPoints = rhs._energyPoints;
+	    _attackDamage = rhs._attackDamage;
+	}
 	return *this;
 }
 

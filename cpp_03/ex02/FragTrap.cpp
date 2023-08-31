@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 23:33:32 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/10 23:33:32 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/31 11:51:45 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,15 @@ FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
 
 FragTrap& FragTrap::operator=(const FragTrap& rhs)
 {
-	ClapTrap::operator=(rhs);
+	std::cout << "FragTrap " << rhs._name << ": Assignation operator called" << std::endl;
+	if (this != &rhs)
+	{
+		_name = rhs._name;
+		_nameClass = rhs._nameClass;
+	    _hitPoints = rhs._hitPoints;
+	    _energyPoints = rhs._energyPoints;
+	    _attackDamage = rhs._attackDamage;
+	}
 	return *this;
 }
 

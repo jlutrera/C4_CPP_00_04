@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 21:00:37 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/28 14:18:12 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/31 10:38:40 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@ ClapTrap::ClapTrap( std::string name ) : _name( name ), _nameClass( "ClapTrap " 
 	std::cout << "ClapTrap " << _name << ": Name constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap ( const ClapTrap &t ) : _name(t.getName()), _nameClass(t.getNameClass()), _hitPoints(t.getHitPoints()), _energyPoints(t.getEnergyPoints()), _attackDamage(t.getAttackDamage())
+ClapTrap::ClapTrap ( const ClapTrap &t ) : _name(t._name), _nameClass(t._nameClass), _hitPoints(t._hitPoints), _energyPoints(t._energyPoints), _attackDamage(t._attackDamage)
 {
     std::cout << "ClapTrap " << t._name << ": Copy constructor called" << std::endl;
 }
 
-ClapTrap& ClapTrap::operator =( const ClapTrap &t )
+ClapTrap& ClapTrap::operator=( const ClapTrap &t )
 {
 	if (this != &t)
     {
-        _name = t.getName();
-		_nameClass = t.getNameClass();
-        _hitPoints = t.getHitPoints();
-        _energyPoints = t.getEnergyPoints();
-        _attackDamage = t.getAttackDamage();
+        _name = t._name;
+		_nameClass = t._nameClass;
+        _hitPoints = t._hitPoints;
+        _energyPoints = t._energyPoints;
+        _attackDamage = t._attackDamage;
     }
 	return *this;
 }
@@ -78,7 +78,7 @@ void ClapTrap::takeDamage( unsigned int amount )
 
 	if (_hitPoints <= amount)
 	{
-		 std::cout << " takes " << _hitPoints << " damage points and dead !" << std::endl;
+		 std::cout << " takes " << amount << " damage points and dead !" << std::endl;
 		_hitPoints = 0;
 		return;
 	}

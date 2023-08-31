@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 21:00:27 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/08 21:00:27 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/08/31 10:54:00 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main()
 	ft_printPoints(joe.getNameClass(), joe.getEnergyPoints(), joe.getHitPoints(), joe.getAttackDamage());
 
 	std::cout << std::endl;
-	std::cout << YELLOW + "Probamos el objeto <jane> (que es copia de <joe>) de la clase <FragTrap>" + RESET << std::endl;
+	std::cout << YELLOW + "Probamos el objeto <jane> (que es copia de <joe> al inicio) de la clase <FragTrap>" + RESET << std::endl;
 	ft_printPoints(jane.getNameClass(), jane.getEnergyPoints(), jane.getHitPoints(), jane.getAttackDamage());
 	jane.attack("Lisa");
 	jane.takeDamage(99);
@@ -48,7 +48,7 @@ int main()
 	ft_printPoints(jane.getNameClass(), jane.getEnergyPoints(), jane.getHitPoints(), jane.getAttackDamage());
 	
 	std::cout << std::endl;
-	std::cout << YELLOW + "Probamos el objeto <peter> (que se iguala a <joe>) de la clase <FragTrap>" + RESET << std::endl;
+	std::cout << YELLOW + "Probamos el objeto <peter> (que se iguala a <joe> ahora) de la clase <FragTrap>" + RESET << std::endl;
 	peter = joe;
 	ft_printPoints(peter.getNameClass(), peter.getEnergyPoints(), peter.getHitPoints(), peter.getAttackDamage());
 	peter.attack("Lisa");
