@@ -19,7 +19,7 @@ class ClapTrap
 {
     public:
         ClapTrap( void );
-        ~ClapTrap();
+        virtual ~ClapTrap();
         ClapTrap( std::string name );
         ClapTrap ( const ClapTrap &t );
         ClapTrap& operator=( const ClapTrap &t );
