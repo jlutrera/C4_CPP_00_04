@@ -21,11 +21,15 @@ class FragTrap : virtual public ClapTrap
 		FragTrap( void );
 		~FragTrap();
 		FragTrap( std::string name );
-	
 		FragTrap(const FragTrap& other);
 		FragTrap& operator=(const FragTrap& rhs);
 
 		void highFivesGuys( void );
+
+	protected:
+	    unsigned int    _FraghitPoints;
+        unsigned int    _FragenergyPoints;
+        unsigned int    _FragattackDamage;
 };
 
 #endif

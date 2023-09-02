@@ -19,6 +19,9 @@ FragTrap::FragTrap( void ) : ClapTrap()
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
+	_FraghitPoints = 100;
+    _FragenergyPoints = 100;
+    _FragattackDamage = 30;
 }
 
 FragTrap::FragTrap( std::string name) : ClapTrap( name )
@@ -28,6 +31,9 @@ FragTrap::FragTrap( std::string name) : ClapTrap( name )
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
+	_FraghitPoints = 100;
+    _FragenergyPoints = 100;
+    _FragattackDamage = 30;
 }
 
 FragTrap::~FragTrap()
@@ -38,6 +44,9 @@ FragTrap::~FragTrap()
 FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
 {
 	std::cout << "FragTrap " << other._name << ": Copy constructor called." << std::endl;
+	_FraghitPoints = other._FraghitPoints;
+    _FragenergyPoints = other._FragenergyPoints;
+    _FragattackDamage = other._FragattackDamage;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& rhs)
@@ -50,6 +59,9 @@ FragTrap& FragTrap::operator=(const FragTrap& rhs)
 	    _hitPoints = rhs._hitPoints;
 	    _energyPoints = rhs._energyPoints;
 	    _attackDamage = rhs._attackDamage;
+		_FraghitPoints = rhs._FraghitPoints;
+    	_FragenergyPoints = rhs._FragenergyPoints;
+    	_FragattackDamage = rhs._FragattackDamage;
 	}
 	return *this;
 }

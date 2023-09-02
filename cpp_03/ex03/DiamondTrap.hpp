@@ -22,7 +22,6 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap( void );
 		DiamondTrap( std::string name );
 		~DiamondTrap();
-		
 		DiamondTrap(const DiamondTrap& other);
 		DiamondTrap& operator=(const DiamondTrap& rhs);
 		

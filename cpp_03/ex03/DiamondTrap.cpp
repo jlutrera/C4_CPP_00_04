@@ -15,19 +15,23 @@
 DiamondTrap::DiamondTrap( void ) : ClapTrap("Noname_clap_name"), ScavTrap("Noname_clap_name"), FragTrap("Noname_clap_name")
 {
 	std::cout << "DiamondTrap Noname: Default constructor called." << std::endl;
-	this->_nameClass = "DiamondTrap Noname";
+	_nameClass = "DiamondTrap Noname";
 	this->_name = "Noname";
 
-	ScavTrap::_energyPoints = 50;
+	_energyPoints = ScavTrap::_ScavenergyPoints;
+	_hitPoints = FragTrap::_FragenergyPoints;
+	_attackDamage = FragTrap::_FragattackDamage;
 }
 
 DiamondTrap::DiamondTrap( std::string name ) : ClapTrap( name + "_clap_name" ), ScavTrap( name + "_clap_name" ), FragTrap( name + "_clap_name" )
 {	
 	std::cout << "DiamondTrap " << name  << ": Name constructor called." << std::endl;
-	this->_nameClass = "DiamondTrap " + name;
+	_nameClass = "DiamondTrap " + name;
 	this->_name = name;
 	
-	ScavTrap::_energyPoints = 50;
+	_energyPoints = ScavTrap::_ScavenergyPoints;
+	_hitPoints = FragTrap::_FragenergyPoints;
+	_attackDamage = FragTrap::_FragattackDamage;
 }
 
 DiamondTrap::~DiamondTrap()
@@ -48,10 +52,10 @@ DiamondTrap& DiamondTrap::operator=( const DiamondTrap& rhs )
 	{
 		this->_name = rhs._name;
 		ClapTrap::_name = rhs.ClapTrap::_name;
-		this->_nameClass = rhs._nameClass;
-	    this->_hitPoints = rhs._hitPoints;
-	    this->_energyPoints = rhs._energyPoints;
-	    this->_attackDamage = rhs._attackDamage;
+		_nameClass = rhs._nameClass;
+	    _hitPoints = rhs._hitPoints;
+	    _energyPoints = rhs._energyPoints;
+		_attackDamage = rhs._attackDamage;
 	}
 	return *this;
 }

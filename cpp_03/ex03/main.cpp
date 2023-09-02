@@ -27,7 +27,7 @@ int main()
 	std::cout << std::endl;
 	std::cout << YELLOW + "Creamos los objetos de la clase" + RESET << std::endl;
 	DiamondTrap daniel("Daniel");
-	DiamondTrap mary;
+	DiamondTrap mary("mary");
 	DiamondTrap peter(daniel);
 	
 	std::cout << std::endl;
@@ -43,7 +43,6 @@ int main()
 	
 	std::cout << std::endl;
 	std::cout << YELLOW + "Probamos el objeto <mary> de la clase <DiamondTrap>" + RESET << std::endl;
-	std::cout << YELLOW + "    Antes de igualarlo a <daniel>" + RESET << std::endl;
 	ft_printPoints(mary.getNameClass(), mary.getEnergyPoints(), mary.getHitPoints(), mary.getAttackDamage());
 	mary.attack("Ned");
 	mary.takeDamage(1);
@@ -53,8 +52,9 @@ int main()
 	mary.whoAmI();
 	ft_printPoints(mary.getNameClass(), mary.getEnergyPoints(), mary.getHitPoints(), mary.getAttackDamage());
 	
+	std::cout << std::endl;
+	std::cout << YELLOW + "Probamos la sobrecarga del operador de asignación, con <mary>=<daniel>" + RESET << std::endl;
 	mary = daniel;
-	std::cout << YELLOW + "    Despues de igualarlo a <daniel>" + RESET << std::endl;
 	ft_printPoints(mary.getNameClass(), mary.getEnergyPoints(), mary.getHitPoints(), mary.getAttackDamage());
 	mary.attack("Ned");
 	mary.takeDamage(5);
@@ -65,16 +65,24 @@ int main()
 	ft_printPoints(mary.getNameClass(), mary.getEnergyPoints(), mary.getHitPoints(), mary.getAttackDamage());
 
 	std::cout << std::endl;
-	std::cout << YELLOW + "Probamos el objeto <peter> ( copia de <daniel> ) de la clase <DiamondTrap>" + RESET << std::endl;
+	std::cout << YELLOW + "Probamos el constructor de copia con el objeto <peter> ( que es copia de <daniel> )" + RESET << std::endl;
 	ft_printPoints(peter.getNameClass(), peter.getEnergyPoints(), peter.getHitPoints(), peter.getAttackDamage());
 	peter.attack("Ned");
-	peter.takeDamage(8);
+	peter.attack("Ned");
+	peter.attack("Ned");
+	peter.takeDamage(18);
 	peter.beRepaired(5);
 	peter.guardGate();
 	peter.highFivesGuys();
 	peter.whoAmI();
 	ft_printPoints(peter.getNameClass(), peter.getEnergyPoints(), peter.getHitPoints(), peter.getAttackDamage());
 
+	std::cout << std::endl;
+	std::cout << YELLOW + "Probamos que el objeto <peter>  es diferente del objeto <daniel>" + RESET << std::endl;
+	std::cout << "<peter> : ";
+	ft_printPoints(peter.getNameClass(), peter.getEnergyPoints(), peter.getHitPoints(), peter.getAttackDamage());
+	std::cout << "<daniel> : ";
+	ft_printPoints(daniel.getNameClass(), daniel.getEnergyPoints(), daniel.getHitPoints(), daniel.getAttackDamage());
 	std::cout << std::endl;
 	std::cout << YELLOW + "Destruimos los objetos de la clase" + RESET << std::endl;
 

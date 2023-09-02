@@ -21,12 +21,16 @@ class ScavTrap : virtual public ClapTrap
 		ScavTrap( void );
 		~ScavTrap();
 		ScavTrap( std::string name );
-
 		ScavTrap(const ScavTrap& other);
 		ScavTrap& operator=(const ScavTrap& rhs);
 
 		void guardGate( void );
 		void attack( const std::string &target );
+
+	protected:
+	    unsigned int    _ScavhitPoints;
+        unsigned int    _ScavenergyPoints;
+        unsigned int    _ScavattackDamage;
 };
 
 #endif

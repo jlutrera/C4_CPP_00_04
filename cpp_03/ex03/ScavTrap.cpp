@@ -14,12 +14,14 @@
 
 ScavTrap::ScavTrap( void ) : ClapTrap()
 {
-
 	std::cout << "ScavTrap " << _name << ": Default constructor called." << std::endl;
 	_nameClass = "ScavTrap Noname";
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
+	_ScavhitPoints = 100;
+    _ScavenergyPoints = 50;
+    _ScavattackDamage = 20;
 }
 
 ScavTrap::ScavTrap( std::string name) : ClapTrap( name )
@@ -29,6 +31,9 @@ ScavTrap::ScavTrap( std::string name) : ClapTrap( name )
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
+	_ScavhitPoints = 100;
+    _ScavenergyPoints = 50;
+    _ScavattackDamage = 20;
 }
 
 ScavTrap::~ScavTrap()
@@ -39,6 +44,9 @@ ScavTrap::~ScavTrap()
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
 	std::cout << "ScavTrap " << other._name << ": Copy constructor called." << std::endl;
+	_ScavhitPoints = other._ScavhitPoints;
+    _ScavenergyPoints = other._ScavenergyPoints;
+    _ScavattackDamage = other._ScavattackDamage;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
@@ -51,6 +59,9 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
 	    _hitPoints = rhs._hitPoints;
 	    _energyPoints = rhs._energyPoints;
 	    _attackDamage = rhs._attackDamage;
+		_ScavhitPoints = rhs._ScavhitPoints;
+    	_ScavenergyPoints = rhs._ScavenergyPoints;
+    	_ScavattackDamage = rhs._ScavattackDamage;
 	}
 	return *this;
 }
