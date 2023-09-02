@@ -19,7 +19,7 @@ DiamondTrap::DiamondTrap( void ) : ClapTrap("Noname_clap_name"), ScavTrap("Nonam
 	this->_name = "Noname";
 
 	_energyPoints = ScavTrap::_ScavenergyPoints;
-	_hitPoints = FragTrap::_FragenergyPoints;
+	_hitPoints = FragTrap::_FraghitPoints;
 	_attackDamage = FragTrap::_FragattackDamage;
 }
 
