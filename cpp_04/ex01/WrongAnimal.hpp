@@ -6,14 +6,13 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 17:31:21 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/16 17:31:21 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/09/02 14:15:20 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGANIMAL_HPP
 #  define WRONGANIMAL_HPP
 
-#  include <iostream>
 #  include "Brain.hpp"
 
 class WrongAnimal
@@ -25,7 +24,7 @@ class WrongAnimal
 		WrongAnimal& operator=(const WrongAnimal& other);
 		std::string getType() const;
 	
-		~WrongAnimal();
+		virtual ~WrongAnimal();
 		void makeSound( void ) const;
 
 	protected:

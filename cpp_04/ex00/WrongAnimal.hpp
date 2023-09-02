@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 17:30:01 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/16 17:30:01 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/09/02 13:49:48 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class WrongAnimal
 		WrongAnimal(std::string type);
 		WrongAnimal(const WrongAnimal &other);
 		WrongAnimal& operator=(const WrongAnimal& other);
+		virtual ~WrongAnimal();
+		
 		std::string getType() const;
-		//Falta "virtual" así que no va a funcionar		
-		~WrongAnimal();
-		void makeSound( void ) const;
+		void makeSound( void ) const;//Falta "virtual" así que no va a funcionar		
 
 	protected:
 		std::string _type;

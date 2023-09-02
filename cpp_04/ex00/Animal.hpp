@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 17:29:24 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/16 17:29:24 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/09/02 13:44:05 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ class Animal
 		Animal( void );
 		Animal(std::string type);
 		Animal(const Animal &other);
-		Animal& operator=(const Animal& other);
-		std::string getType() const;
 		virtual ~Animal();
+		Animal& operator=(const Animal& other);
+		
+		std::string getType() const;
 		virtual void makeSound( void ) const;
 
 	protected:

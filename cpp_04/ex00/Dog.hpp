@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 17:29:44 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/16 17:29:44 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/09/02 13:45:14 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Dog : public Animal
 {
 	public:
 		Dog( void );
-		virtual ~Dog();
+		~Dog();
 		Dog(const Dog &other);
 		Dog& operator=(const Dog& other);
 
