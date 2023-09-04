@@ -27,7 +27,7 @@ int main()
 
 	const WrongAnimal* meta2 = new WrongAnimal();
 	const WrongAnimal* k = new WrongCat();
-
+	const WrongCat caty;
 	std::cout << std::endl;
 	std::cout << YELLOW + "*** THESE ARE THE CORRECT IMPLEMENTATION ***" + RESET << std::endl;
 	std::cout << j->getType() << " : ";
@@ -44,6 +44,8 @@ int main()
 	k->makeSound();
 	std::cout << meta2->getType() << " : ";
 	meta2->makeSound();
+	std::cout << caty.getType() << " : ";
+	caty.makeSound();
 	std::cout << std::endl;
 	
 	//liberamos memoria

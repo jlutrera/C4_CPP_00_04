@@ -10,32 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "../include/Ice.hpp"
 
-Ice::Ice() : AMateria("ice") {}
+Ice::Ice() : AMateria("ice")
+{
+	std::cout << "Ice: Name constructor" << std::endl;	
+}
 
-Ice::~Ice() {}
+Ice::~Ice()
+{
+	std::cout << "Ice: Default destructor" << std::endl;	
+}
 
 Ice& Ice::operator=(const Ice &hrs)
 {
+	std::cout << "Ice: Assignment operator overload" << std::endl;
 	/*This does not make sense
 	if (this != &hrs)
 		_type = hrs.getType();
 	*/
+	if (this != &hrs)
+		AMateria::operator=(hrs);
 	return *this;
 }
 
-Ice::Ice(const Ice & hrs)
+Ice::Ice(const Ice & hrs) : AMateria(hrs)
 {
-	_type = "ice";
+	std::cout << "Ice: Copy constructor" << std::endl;
 }
 
 AMateria* Ice::clone() const
 {
-	return &Ice();
+	AMateria* tmp = new Ice();
+	std::cout << "Ice: An object has been cloned" << std::endl;
+	return tmp;
 }
 
 void Ice::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at " << _type << " *";
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

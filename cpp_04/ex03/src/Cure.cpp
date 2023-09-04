@@ -10,32 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "../include/Cure.hpp"
 
-Cure::Cure() : AMateria("cure") {}
-
-Cure::~Cure() {}
-
-Cure::Cure(const Cure& hrs)
+Cure::Cure() : AMateria("cure")
 {
-	_type = "cure";
+	std::cout << "Cure: Name constructor" << std::endl;
+}
+
+Cure::~Cure()
+{
+	std::cout << "Cure: Default destructor" << std::endl;
+}
+
+Cure::Cure(const Cure& hrs) : AMateria(hrs)
+{
+	std::cout << "Cure: Copy constructor" << std::endl;
 }
 
 Cure& Cure::operator=(const Cure& hrs)
 {
+	std::cout << "Cure: Assignment operator overload" << std::endl;
 	/*this does not make sense
 	if (this != &hrs)
 		_type = hrs.getType();
 	*/
+	if (this != &hrs)
+		AMateria::operator=(hrs);
 	return *this;
 }
 
 AMateria* Cure::clone() const
 {
-	return &Cure();
+	AMateria* tmp = new Cure();
+	std::cout << "Cure: An object has been cloned" << std::endl;
+	return tmp;
 }
 
 void Cure::use(ICharacter& target)
 {
-	std::cout << "* heals " << _type << "'s wounds *";
+	
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

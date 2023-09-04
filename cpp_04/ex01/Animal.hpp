@@ -13,7 +13,7 @@
 #ifndef ANIMAL_HPP
 #  define ANIMAL_HPP
 
-#  include "Brain.hpp"
+#  include <iostream>
 
 class Animal
 {
@@ -21,9 +21,10 @@ class Animal
 		Animal( void );
 		Animal(std::string type);
 		Animal(const Animal &other);
-		Animal& operator=(const Animal& other);
-		std::string getType() const;
 		virtual ~Animal();
+		virtual Animal& operator=(const Animal& other);
+		
+		std::string getType() const;
 		virtual void makeSound( void ) const;
 
 	protected:

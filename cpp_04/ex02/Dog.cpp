@@ -34,7 +34,7 @@ Dog& Dog::operator=(const Dog &other)
 	std::cout << "Dog : Overload operator = called." << std::endl;
 	if (this != &other)
 	{
-		_type = other._type;
+		Animal::operator=(other);
 		*_brain = *other._brain;
 	}
 	return *this;

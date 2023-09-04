@@ -1,12 +1,12 @@
 NAME	= 	animals
 #Flags
 CC		= 	c++
-CFLAGS	= 	-Wall -Wextra -Werror -Wshadow -std=c++98 -fsanitize=address
+CFLAGS	= 	-Wall -Wextra -Werror -Wshadow -Wpedantic -std=c++98 -fsanitize=address
 RM		= 	rm -rf
 
 #Files
-SRC		=	AAnimal.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
-HEADER	=	AAnimal.hpp Animal.hpp Dog.hpp Cat.hpp Brain.hpp WrongAnimal.hpp WrongCat.hpp
+SRC		=	Animal.cpp Dog.cpp Cat.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
+HEADER	=	Animal.hpp Dog.hpp Cat.hpp Brain.hpp WrongAnimal.hpp WrongCat.hpp
 OBJ		= 	$(SRC:.cpp=.o)
 
 #Colors:

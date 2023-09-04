@@ -1,12 +1,12 @@
-NAME	= 	animals
+NAME	= 	materia
 #Flags
 CC		= 	c++
 CFLAGS	= 	-Wall -Wextra -Werror -Wshadow -Wpedantic -std=c++98 -fsanitize=address
 RM		= 	rm -rf
 
 #Files
-SRC		=	Animal.cpp Dog.cpp Cat.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
-HEADER	=	Animal.hpp Dog.hpp Cat.hpp Brain.hpp WrongAnimal.hpp WrongCat.hpp
+SRC		=	./src/AMateria.cpp ./src/Character.cpp ./src/Cure.cpp ./src/Ice.cpp ./src/MateriaSource.cpp ./src/main.cpp
+HEADER	=	./include/AMateria.hpp ./include/Character.hpp ./include/Cure.hpp ./include/Ice.hpp ./include/MateriaSource.hpp
 OBJ		= 	$(SRC:.cpp=.o)
 
 #Colors:

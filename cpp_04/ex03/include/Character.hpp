@@ -13,7 +13,7 @@
 #ifndef CHARACTER_HPP
 #  define CHARACTER_HPP
 
-#  include "ICharacter.hpp"
+#  include "../interface/ICharacter.hpp"
 
 class Character : public ICharacter
 {
@@ -28,10 +28,12 @@ class Character : public ICharacter
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
+		void printEquipment();
 
 	private:
-		AMateria* _slots[4];
-		AMateria* _unequipments[4];
+		AMateria*	_slots[4];
+		bool		_equiped[4];
+		std::string	_name;
 };
 
 #endif

@@ -30,7 +30,8 @@ WrongCat::WrongCat(const WrongCat &other) : WrongAnimal( other )
 WrongCat& WrongCat::operator=(const WrongCat &other)
 {
 	std::cout << "WrongCat : Overload operator = called." << std::endl;
-	WrongAnimal::operator=(other);
+	if (this != &other)
+		WrongAnimal::operator=(other);
 	return *this;
 }
 

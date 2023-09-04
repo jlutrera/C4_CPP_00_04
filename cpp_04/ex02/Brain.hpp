@@ -19,12 +19,12 @@ class Brain
 {
 	public:
 		Brain();
-		~Brain();
 		Brain(const Brain &other);
-		Brain& operator=(const Brain &other);
+		virtual ~Brain();
+		virtual Brain& operator=(const Brain &other);
 
-		std::string getBrain(int i) const;
-		void setBrain(int i, std::string str);
+		virtual std::string getBrain(int i) const;
+		virtual void setBrain(int i, std::string str);
 
 	protected:
 		std::string _ideas[100];

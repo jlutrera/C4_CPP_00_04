@@ -15,7 +15,7 @@
 
 #  include "AMateria.hpp"
 
-class Ice : public AMateria
+class Ice : virtual public AMateria
 {
 	public:
 		Ice();

@@ -1,44 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 17:41:50 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/16 17:41:50 by jutrera-         ###   ########.fr       */
+/*   Created: 2023/08/16 17:41:20 by jutrera-          #+#    #+#             */
+/*   Updated: 2023/08/16 17:41:20 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#ifndef CURE_HPP
+#  define CURE_HPP
 
+#  include "AMateria.hpp"
 
-MateriaSource::MateriaSource()
+class Cure : virtual public AMateria
 {
+	public:
+		Cure();
+		~Cure();
+		Cure(const Cure& hrs);
+		Cure& operator=(const Cure& hrs);
 
-}
+		AMateria* clone() const;
+		void use(ICharacter& target);
+};
 
-MateriaSource::~MateriaSource()
-{
-
-}
-
-MateriaSource& MateriaSource::operator=(const MateriaSource & hrs)
-{
-
-}
-
-MateriaSource::MateriaSource(const MateriaSource & hrs)
-{
-
-}
-
-void MateriaSource::learnMateria(AMateria*)
-{
-
-}
-
-AMateria* MateriaSource::createMateria(std::string const & type)
-{
-
-}
+#endif

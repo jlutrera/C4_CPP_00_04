@@ -34,7 +34,7 @@ Cat& Cat::operator=(const Cat &other)
 	std::cout << "Cat : Overload operator = called." << std::endl;
 	if (this != &other)
 	{
-		_type = other._type;
+		Animal::operator=(other);
 		*_brain = *other._brain;
 	}
 	return *this;
