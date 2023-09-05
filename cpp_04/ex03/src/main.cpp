@@ -45,6 +45,7 @@ void test1()
 
 	me->unequip(1);
 	me->use(1, *bob);	
+	me->use(5, *bob);
 	tmp = src->createMateria("cure");
 	
 	me->equip(tmp);

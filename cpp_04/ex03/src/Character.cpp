@@ -104,8 +104,15 @@ void Character::equip(AMateria* m)
 			}
 			return;
 		}
-		else
-			i++;
+		else if (!_equiped[i])
+		{
+			delete _slots[i];
+			_slots[i] = m;
+			_equiped[i] = 1;
+			std::cout << "Slot " << i << GREEN + " equiped & enabled !" + RESET << std::endl;
+			return;
+		}
+		i++;
 	}
 	std::cout << RED + "Error !" + RESET << std::endl;
 }
@@ -130,7 +137,7 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter& target)
 {
 	std::cout << "Character <" << BLUE + _name + RESET << ">: " << target.getName();
-	if (idx >= 0 && idx < 4 && _slots[idx])
+	if (idx >= 0 && idx < 4 && _slots[idx] && _equiped[idx])
 	{
 		std::cout << " use the materia " << YELLOW + _slots[idx]->getType() + RESET << " from the slot " << idx << std::endl;
 		_slots[idx]->use(target);
