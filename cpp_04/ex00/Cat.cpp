@@ -6,7 +6,7 @@
 /*   By: jutrera- <jutrera-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 17:29:31 by jutrera-          #+#    #+#             */
-/*   Updated: 2023/08/16 17:29:31 by jutrera-         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:48:08 by jutrera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,3 @@ void Cat::makeSound( void ) const
 {
 	std::cout << "Meow Meow !!" << std::endl;
 }
-
